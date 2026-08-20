@@ -1,25 +1,17 @@
 # -*- coding: utf-8 -*-
 """
 llm_analyzer.py
-封装本地 Ollama 模型调用，提取时间线索、家族世系、人物年龄等信息。
+封装本地 Ollama 模型调用，提取时间线索、家族世系、人物年龄，以及人物关系网络/
+交叉锚点事件。
 
-本版改动（针对"越跑越慢" + "年份推理错误"两个问题）：
-
-【年份推理错误】
-把 year_transition 从二元的 SAME_YEAR/NEXT_YEAR 扩展为四态，并强制模型在给出结论前
-先列出文中出现的时间/跨度指示词、判断是否属于楔子/家族前史等元叙事，避免"没有显式
-'次年'字样就默认算同一年"这种粗暴归类，导致"披阅十载""英莲三岁...五岁"这类跨度被
-错误地打成 SAME_YEAR。
-
-【越跑越慢】
-1. /api/generate 本身是无状态调用，我们从不回传上一次的 context 字段，所以不存在
-   "历史对话像滚雪球一样累积进 attention 计算"的问题——这点可以排除。
-2. 加了 repeat_penalty，降低模型在 JSON 生成中"卡壳重复"直到撞满 num_predict 上限
-   的概率（这种卡壳本身就是单条请求变慢的直接原因）。
-3. 把 Ollama 返回的 done_reason 记录下来：如果频繁是 "length"（即被 num_predict
-   截断，而不是模型自然生成结束），说明大概率是在重复输出，可以在日志里直接看到。
-4. 提供 force_unload_model()，配合 pipeline 里的定期重置逻辑，定期把模型从显存/内存
-   强制卸载再重新加载，避免长时间连续推理导致的显存碎片化或潜在内存泄漏累积。
+本版新增（人物关系网络化，进一步提速）：
+1. Prompt 里注入 network_graph.py 中的锚点参照系，要求模型额外输出
+   characters_present（出场人物）和 relational_events（人物关系事件，
+   附带 network_anchor 字段用于匹配锚点）。
+2. 明确告诉模型：命中锚点时 reasoning_logic 只需简短说明匹配依据，不需要
+   展开三步检查——这能显著缩短命中锚点段落的输出长度，直接提速。
+   （没命中锚点的段落，仍然走之前"三步检查"的完整相对时间推理，保证准确性
+   不因为省 token 而下降。）
 """
 
 import re
@@ -27,29 +19,39 @@ import json
 import time
 import requests
 
+from network_graph import RedMansionTimelineGraph
+
 OLLAMA_URL = "http://localhost:11434/api/generate"
 _session = requests.Session()
+_graph = RedMansionTimelineGraph()
+_NETWORK_CONTEXT = _graph.build_prompt_context()
 
-PROMPT_TEMPLATE = """你是一个精通《红楼梦》文本考据与脂砚斋批注的文史专家。
+PROMPT_TEMPLATE = """你是一个精通《红楼梦》文本考据、脂砚斋批注与人物关系网络的文史专家。
+
+""" + _NETWORK_CONTEXT + """
 
 【分析任务】：
-请仔细阅读下方正文与脂批，深度提取其中所有时间线索。
+请仔细阅读下方正文与脂批，完成两件事：
 
-在得出结论前，你必须在 reasoning_logic 中依次完成以下三步检查（这是强制步骤，不能跳过）：
-1. 本段文本是否包含"十载""数年""转眼""次年""越明年""年方X岁……又X岁"等跨度/年龄
-   对比词？把找到的原词填入 time_markers_found（没有则填空数组）。
-2. 本段是否属于楔子、凡例、创作背景交代、家族前史（如"林家五世""贾府始祖""遗本赐官"）
-   等元叙事内容，而不是某个具体年份里发生的单一情节？
-3. 根据以上两步得出 year_transition：
-   - 如果第 1 步找到了跨越多年的词（如"十载""数年""转眼""英莲三岁……后来五岁"），
-     严禁判定为 SAME_YEAR，必须判定为 YEARS_LATER，并在 estimated_year_gap 中给出
-     你估计的跨越年数（如"十载"填 10，"数年"填 3~5 之间你认为合理的数字，"转眼"
-     若无更具体线索可填 2）。
-   - 如果第 2 步判断为元叙事背景，判定为 META_BACKGROUND（这类内容不代表某一具体
-     年份，不需要填 estimated_year_gap）。
-   - 只有当本段确实发生在与上文相邻的同一年内（日、月更替，或无跨年标记的顺叙），
-     才能判定为 SAME_YEAR。
-   - 只有明确出现"次年""越明年""次冬"等恰好跨一年的词，才判定为 NEXT_YEAR。
+一、人物关系网络匹配（优先做这个，做得好可以让你少写很多推理文字）：
+   识别文中出现的人物，以及人物之间发生的关系性事件（如生卒、婚嫁、探病、
+   离别、书信往来等）。如果某个事件明显对应上面参照系里的某一条（哪怕措辞
+   不同，只要事件本质一致，比如"黛玉之母去世"对应 DAIYU_MOTHER_DEATH），
+   就把对应的 key 填入该事件的 network_anchor 字段。
+   —— 如果成功命中锚点：reasoning_logic 只需要一两句话说明你是根据什么
+      判断命中的即可，不需要再做下面的三步检查，直接按锚点年份给
+      year_transition 相关字段定调。
+   —— 如果没有命中任何锚点：才需要按以下三步走完整推理：
+      1. 本段是否包含"十载""数年""转眼""次年""越明年""年方X岁……又X岁"
+         等跨度/年龄对比词？填入 time_markers_found。
+      2. 本段是否属于楔子、凡例、创作背景交代、家族前史等元叙事？
+      3. 据此判定 year_transition：找到跨年词严禁判 SAME_YEAR，必须判
+         YEARS_LATER 并给出 estimated_year_gap；属于元叙事判
+         META_BACKGROUND；只有恰好跨一年才判 NEXT_YEAR；其余顺叙才判
+         SAME_YEAR。
+
+二、常规信息提取：显式时间/节令、家族世系与爵位继承背景、人物相对年龄、
+    正文情节、脂批印证。
 
 【输入数据】：
 章节：{chapter}
@@ -62,6 +64,17 @@ PROMPT_TEMPLATE = """你是一个精通《红楼梦》文本考据与脂砚斋�
 【输出格式】（仅输出合法的 JSON 对象，不要输出 Markdown 标记）：
 {{
   "chapter": "{chapter}",
+  "characters_present": ["文中出场或被提及的人物"],
+  "relational_events": [
+    {{
+      "subject": "主体人物",
+      "target": "关联人物",
+      "relation": "关系（如：母女/主仆/夫妻）",
+      "event": "具体事件",
+      "subject_age": "主体人物当时年龄，不确定填 null",
+      "network_anchor": "命中的锚点 key，没命中填 null"
+    }}
+  ],
   "season_or_festival": "显式节令/时间说明，没有则填 null",
   "time_markers_found": ["文中出现的时间/年龄/跨度指示词原文，没有则填空数组"],
   "is_meta_narrative": false,
@@ -70,7 +83,7 @@ PROMPT_TEMPLATE = """你是一个精通《红楼梦》文本考据与脂砚斋�
   "background_and_lineage": ["世系继承/家族背景/人物年龄对比细节"],
   "narrative_events": ["详细情节事件（含生卒、官职升迁、迁徙等）"],
   "zhi_corroborations": ["脂批说明"],
-  "reasoning_logic": "先按上面三步依次说明你的判断依据，再给出结论"
+  "reasoning_logic": "命中锚点则简短说明匹配依据；未命中则按三步检查依次说明"
 }}
 """
 
@@ -88,11 +101,31 @@ def _clean_json_raw(raw: str) -> str:
 VALID_TRANSITIONS = {"SAME_YEAR", "NEXT_YEAR", "YEARS_LATER", "META_BACKGROUND"}
 
 
+def _normalize_relational_events(raw_events) -> list:
+    if not isinstance(raw_events, list):
+        return []
+    cleaned = []
+    for ev in raw_events:
+        if not isinstance(ev, dict):
+            continue
+        cleaned.append({
+            "subject": ev.get("subject") or "",
+            "target": ev.get("target") or "",
+            "relation": ev.get("relation") or "",
+            "event": ev.get("event") or "",
+            "subject_age": ev.get("subject_age"),
+            "network_anchor": ev.get("network_anchor"),
+        })
+    return cleaned
+
+
 def _normalize_response(parsed: dict, chapter: str) -> dict:
     if not isinstance(parsed, dict):
         raise ValueError("模型返回的不是 JSON 对象")
 
     parsed.setdefault("chapter", chapter)
+    parsed.setdefault("characters_present", [])
+    parsed["relational_events"] = _normalize_relational_events(parsed.get("relational_events"))
     parsed.setdefault("season_or_festival", None)
     parsed.setdefault("time_markers_found", [])
     parsed.setdefault("is_meta_narrative", False)
@@ -111,7 +144,8 @@ def _normalize_response(parsed: dict, chapter: str) -> dict:
     except (TypeError, ValueError):
         parsed["estimated_year_gap"] = 0
 
-    for key in ["time_markers_found", "background_and_lineage", "narrative_events", "zhi_corroborations"]:
+    for key in ["characters_present", "time_markers_found", "background_and_lineage",
+                "narrative_events", "zhi_corroborations"]:
         if isinstance(parsed[key], str):
             parsed[key] = [parsed[key]] if parsed[key] else []
 
@@ -143,8 +177,6 @@ def analyze_timeline_segment(
             "top_p": 0.3,
             "num_ctx": num_ctx,
             "num_predict": num_predict,
-            # 降低"卡壳重复直到撞满 num_predict"的概率——这种卡壳是单条请求
-            # 突然变慢的常见直接原因，而不只是硬件降频。
             "repeat_penalty": 1.15,
             "repeat_last_n": 256,
         },
@@ -160,8 +192,6 @@ def analyze_timeline_segment(
             raw_res = body.get("response", "")
             request_elapsed = time.time() - request_start
 
-            # done_reason == "length" 说明是被 num_predict 截断的，而不是模型自然收尾，
-            # 大概率意味着它在 JSON 里卡壳重复了，是"单条变慢"的直接信号。
             done_reason = body.get("done_reason")
             if done_reason == "length":
                 print(f"    ⚠️ [{chapter}] 触发 num_predict 截断（耗时 {request_elapsed:.1f}s），"
@@ -169,7 +199,10 @@ def analyze_timeline_segment(
 
             clean_raw = _clean_json_raw(raw_res)
             parsed = json.loads(clean_raw)
-            return _normalize_response(parsed, chapter)
+            normalized = _normalize_response(parsed, chapter)
+            # 用人物关系网络锚点做校准（命中锚点会写入 matched_anchor 等字段）
+            normalized = _graph.align_segment(normalized)
+            return normalized
 
         except Exception as e:
             last_error = str(e)
@@ -179,6 +212,8 @@ def analyze_timeline_segment(
     return {
         "chapter": chapter,
         "error": last_error or "未知解析错误",
+        "characters_present": [],
+        "relational_events": [],
         "season_or_festival": None,
         "time_markers_found": [],
         "is_meta_narrative": False,
@@ -188,14 +223,14 @@ def analyze_timeline_segment(
         "narrative_events": [],
         "zhi_corroborations": zhi_evidence,
         "reasoning_logic": f"推理失败: {last_error}",
+        "matched_anchor": None,
+        "calculated_global_year_offset": None,
+        "matched_anchor_desc": None,
     }
 
 
 def force_unload_model(model_name: str, url: str = OLLAMA_URL, timeout: int = 30):
-    """
-    立即卸载模型（keep_alive=0），下一次调用会重新加载。
-    用于长时间连续推理后定期"清空重来"，缓解可能的显存碎片化/内存累积导致的降速。
-    """
+    """立即卸载模型（keep_alive=0），下一次调用会重新加载，缓解长时间连续推理导致的降速。"""
     try:
         _session.post(url, json={"model": model_name, "prompt": "", "keep_alive": 0}, timeout=timeout)
         return True
