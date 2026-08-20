@@ -52,6 +52,8 @@ def parse_args():
     parser.add_argument("--min-chars", type=int, default=800, help="清洗阶段段落块最小字符数")
     parser.add_argument("--max-chars", type=int, default=1500, help="清洗阶段段落块最大字符数")
     parser.add_argument("--save-every", type=int, default=5, help="推理阶段每完成多少条保存一次进度")
+    parser.add_argument("--reset-every", type=int, default=30,
+                         help="每完成多少条强制卸载并重新加载一次模型，缓解长时间连续推理的降速；设为 0 关闭")
 
     parser.add_argument("--skip-clean", action="store_true", help="跳过清洗步骤，直接用已有的 processed-json")
     parser.add_argument("--skip-pipeline", action="store_true", help="跳过推理步骤，直接用已有的 timeline-json 做聚合")
@@ -91,6 +93,7 @@ def main():
             model_name=args.model,
             workers=args.workers,
             save_every=args.save_every,
+            reset_every=args.reset_every,
         )
     else:
         print("\n⏭️  跳过步骤 2（推理），使用已有文件:", args.timeline_json)
