@@ -32,22 +32,37 @@ def _atomic_save(results: list, output_json: str):
 
 
 def _compute_offset_years(results: list):
-    """按新的四态 year_transition 依次累加年份"""
+    """
+    按 year_transition 累加年份，同时用人物关系网络锚点做强制校准：
+    如果某段命中了锚点（calculated_global_year_offset 不为空），直接用锚点年份
+    覆盖当前累加值——相当于定期把"可能已经跑偏的估计"拉回一个可信的绝对坐标，
+    再从这个新坐标继续往后累加，避免长距离相对推理的误差无限累积。
+    """
     current_year = 0
     for res in results:
         if not res or res.get("error"):
             continue
+
+        anchor_offset = res.get("calculated_global_year_offset")
+        if anchor_offset is not None:
+            current_year = anchor_offset
+            res["offset_years"] = current_year
+            res["is_meta_narrative"] = False
+            res["year_source"] = "anchor"  # 标记这个年份是锚点校准出来的，不是累加估计
+            continue
+
         yt = res.get("year_transition", "SAME_YEAR")
         if yt == "NEXT_YEAR":
             current_year += 1
         elif yt == "YEARS_LATER":
             gap = res.get("estimated_year_gap") or 0
             if gap <= 0:
-                gap = 3  # 模型没给出具体估计时的保守默认值
+                gap = 3
             current_year += gap
         # SAME_YEAR：不变；META_BACKGROUND：不参与线性年份推进
         res["offset_years"] = current_year
         res["is_meta_narrative"] = (yt == "META_BACKGROUND")
+        res["year_source"] = "relative"  # 标记这个年份是靠相对推理累加出来的
 
 
 def run_timeline_pipeline(
@@ -160,7 +175,10 @@ def run_timeline_pipeline(
     _atomic_save(results, output_json)
 
     error_count = sum(1 for r in results if r and r.get("error"))
+    anchor_count = sum(1 for r in results if r and r.get("year_source") == "anchor")
     print(f"✅ LLM 时间线推理完成，已写入: {output_json}")
+    print(f"   其中 {anchor_count} 条通过人物关系网络锚点直接校准年份，"
+          f"其余靠局部相对推理累加。")
     if error_count:
         print(f"⚠️ 其中 {error_count} 条推理失败（已标记 error 字段），重新运行本脚本会自动只重跑这些失败项。")
 
