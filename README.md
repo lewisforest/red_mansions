@@ -1,18 +1,18 @@
 # red_mansions
 爬梳红楼梦的时间线
 ```
-my_redmansions_project/
-├── 脂砚斋评红楼梦/                    # 存放原始的 txt 文本文件夹
-│   ├── 01_10回.txt
-│   └── 11_20回.txt
-├── processed_data/              # 存放清洗后的 intermediate JSON
-│   └── red_mansions_structured.json
-├── output/                      # 存放最终大模型推导出的时间线结果
-│   └── timeline_analysis_result.json
-├── 01_cleaner.py                # 脚本 1：文本清洗与格式化
-├── llm_analyzer.py              # Ollama API读取清洗后json化的文本，对时间线进行分析
-├── network_graph.py             # 建立时刻锚定标志性事件
-├── 02_pipeline.py               # 脚本 2：与 main.py 的参数接口对接
-├── 03_aggregate.py              # 脚本 3：将逐段推理结果按章节聚合成时间线（JSON + 可读 Markdown）
-└── main.py                      # 统一入口，依次调度01-03脚本
+project_root/
+├── 读取基础信息/脂砚斋评红楼梦/    # 原始文本/脂批目录
+├── processed_data/                  # 中间过程数据目录
+│   ├── 01_cleaned_segments.json     # 1. 清洗分段结果
+│   ├── 02_llm_extractions.json      # 2. LLM 极速原位抽取结果
+│   ├── 03_character_network.json    # 3. 人物关系网络图谱
+│   └── 04_final_timeline.json       # 4. 最终时间轴对齐结果
+├── output/                          # 最终输出报告目录
+│   └── timeline_summary.md          # 聚合 Markdown 报告
+├── 01_cleaner.py                    # 步骤 1：纯 Python 数据清洗
+├── 02_pipeline.py                   # 步骤 2：LLM 极速抽取（2-3秒/条）
+├── 03_character_network.py          # 步骤 3：纯 Python 构建人物共现网络
+├── 04_timeline_aligner.py           # 步骤 4：纯 Python 时间轴挂载对齐
+└── main.py                          # 🚀 全流程统一调度主控脚本
 ```
