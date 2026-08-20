@@ -75,6 +75,8 @@ def aggregate_timeline(input_json: str, output_json: str, output_md: str):
             items = by_chapter[chapter]
             events, zhi_notes, lineage_notes, seasons, markers = [], [], [], [], []
             offset_years_in_chapter = []
+            anchor_descs = []
+            relational_highlights = []
 
             for it in items:
                 events.extend(it.get("narrative_events", []) or [])
@@ -89,6 +91,22 @@ def aggregate_timeline(input_json: str, output_json: str, output_md: str):
                 if "offset_years" in it:
                     offset_years_in_chapter.append(it["offset_years"])
 
+                if it.get("matched_anchor_desc"):
+                    anchor_descs.append(it["matched_anchor_desc"])
+
+                for ev in it.get("relational_events", []) or []:
+                    subject = ev.get("subject") or ""
+                    target = ev.get("target") or ""
+                    relation = ev.get("relation") or ""
+                    event_desc = ev.get("event") or ""
+                    if not (subject and event_desc):
+                        continue
+                    if target:
+                        line = f"{subject} 与 {target}（{relation}）：{event_desc}"
+                    else:
+                        line = f"{subject}：{event_desc}"
+                    relational_highlights.append(line)
+
             summary.append({
                 "chapter": chapter,
                 "chapter_order": chapter_sort_key(chapter),
@@ -101,6 +119,8 @@ def aggregate_timeline(input_json: str, output_json: str, output_md: str):
                 "background_and_lineage": list(dict.fromkeys(lineage_notes)),
                 "events": list(dict.fromkeys(events)),
                 "zhi_corroborations": list(dict.fromkeys(zhi_notes)),
+                "anchor_calibrations": list(dict.fromkeys(anchor_descs)),
+                "relational_highlights": list(dict.fromkeys(relational_highlights)),
                 "segment_count": len(items),
             })
         return summary
@@ -144,7 +164,15 @@ def aggregate_timeline(input_json: str, output_json: str, output_md: str):
         lines.append(f"**{'　'.join(meta_bits)}**")
         if c["time_markers_found"]:
             lines.append(f"时间指示词：{' / '.join(c['time_markers_found'])}")
+        if c["anchor_calibrations"]:
+            lines.append(f"🔗 锚点校准：{' ；'.join(c['anchor_calibrations'])}")
         lines.append("")
+
+        if c["relational_highlights"]:
+            lines.append("**人物关系网络**：")
+            for r in c["relational_highlights"]:
+                lines.append(f"- {r}")
+            lines.append("")
 
         if c["background_and_lineage"]:
             lines.append("**世系/年龄背景**：")
