@@ -11,6 +11,7 @@ my_redmansions_project/
 │   └── timeline_analysis_result.json
 ├── 01_cleaner.py                # 脚本 1：文本清洗与格式化
 ├── llm_analyzer.py              # Ollama API读取清洗后json化的文本，对时间线进行分析
+├── network_graph.py             # 建立时刻锚定标志性事件
 ├── 02_pipeline.py               # 脚本 2：与 main.py 的参数接口对接
 ├── 03_aggregate.py              # 脚本 3：将逐段推理结果按章节聚合成时间线（JSON + 可读 Markdown）
 └── main.py                      # 统一入口，依次调度01-03脚本
