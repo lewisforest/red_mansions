@@ -223,7 +223,7 @@ def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
         req_start = time.time()
         print(f"[{idx}/{total_todo}] 正在抽取 ID:{seg_id} ...", end="", flush=True)
 
-        parsed, err_msg = _call_ollama_with_retry(payload, session, max_retries=max_retries, timeout=timeout)
+        parsed, err_msg = _call_ollama_with_retry(payload, session, max_retries=max_retries, base_timeout=timeout)
 
         if parsed:
             record = {
