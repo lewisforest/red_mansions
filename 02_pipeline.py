@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 02_pipeline.py
-稳健型 Ollama 抽取脚本：只做"这段话里明确提到了什么"的原位抽取，不注入任何
-全局背景知识、不要求推理过程——这是保证速度和降低幻觉的核心设计。
+稳健型 Ollama 抽取脚本（解决 Token 截断与 JSON 语法错误）
 
-在你原来的版本基础上做的补丁：
-- zhi_evidence 直接从 01 的输出透传到这里的记录里（不送进 LLM，纯粹是数据搬运），
-  后面 03/04/05 步骤如果要引用脂批原文作为佐证，数据不会丢。
+在你原来版本基础上的微调：
+1. 超时从 180s 降到 60s：既然这一步的目标就是"2~5秒完成的纯抽取"，如果单次
+   请求真的卡到 60s 还没回来，大概率是模型在生成中卡壳/死循环了，与其死等
+   180s×3次重试（最坏情况单条能拖到9分钟），不如更快失败、更快重试。
+2. zhi_evidence（脂批）直接从清洗阶段的结果透传到输出，不占用模型 token
+   （脂批本身通常已经是明确的文字，不需要模型再"提取"一遍）。
 """
 import re
 import json
@@ -74,7 +76,7 @@ def _clean_and_parse_json(raw: str) -> dict:
         raise ValueError(f"JSON 修复失败: {str(e)} | 原输出前100字: {raw[:100]}")
 
 
-def _call_ollama_with_retry(payload, session, max_retries=3, timeout=180):
+def _call_ollama_with_retry(payload, session, max_retries=3, timeout=60):
     for attempt in range(1, max_retries + 1):
         try:
             resp = session.post(OLLAMA_URL, json=payload, timeout=timeout)
@@ -90,7 +92,9 @@ def _call_ollama_with_retry(payload, session, max_retries=3, timeout=180):
 
 def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
                   output_file="./processed_data/02_llm_extractions.json",
-                  model_name="gemma3:12b"):
+                  model_name="gemma3:12b",
+                  timeout=60,
+                  max_retries=3):
     if not os.path.exists(input_file):
         print(f"❌ 找不到输入文件 {input_file}")
         return
@@ -98,7 +102,7 @@ def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
     with open(input_file, "r", encoding="utf-8") as f:
         segments = json.load(f)
 
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    os.makedirs(os.path.dirname(output_file) or '.', exist_ok=True)
 
     results = []
     processed_ids = set()
@@ -126,6 +130,7 @@ def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
     print(f"🚀 开始抽取 | 待处理: {total_todo} 条 / 总共: {len(segments)} 条")
 
     session = requests.Session()
+    start_time = time.time()
 
     for idx, item in enumerate(todo_segments, 1):
         seg_id = item["segment_id"]
@@ -133,7 +138,7 @@ def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
         narrative = item["narrative"]
         zhi_evidence = item.get("zhi_evidence", [])
 
-        # 过滤纯回目标题（内容极短且像标题，直接落记录不调模型，省一次请求）
+        # 过滤纯回目标题
         if len(narrative) < 30 and ("回" in narrative and "第" in narrative):
             record = {
                 "segment_id": seg_id,
@@ -166,7 +171,7 @@ def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
         req_start = time.time()
         print(f"[{idx}/{total_todo}] 正在抽取 ID:{seg_id} ...", end="", flush=True)
 
-        parsed, err_msg = _call_ollama_with_retry(payload, session, max_retries=3, timeout=180)
+        parsed, err_msg = _call_ollama_with_retry(payload, session, max_retries=max_retries, timeout=timeout)
 
         if parsed:
             record = {
@@ -199,10 +204,12 @@ def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
 
         if idx % 5 == 0 or idx == total_todo:
             results.sort(key=lambda x: x.get("segment_id", 0))
-            tmp_path = output_file + ".tmp"
-            with open(tmp_path, "w", encoding="utf-8") as f:
+            with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(results, f, ensure_ascii=False, indent=2)
-            os.replace(tmp_path, output_file)
+            elapsed = time.time() - start_time
+            avg = elapsed / idx
+            eta_min = (total_todo - idx) * avg / 60
+            print(f"    💾 已保存 | 平均 {avg:.1f}s/条 | 预计剩余 {eta_min:.1f} 分钟")
 
     print(f"\n🎉 抽取完成！结果已存至 {output_file}")
 
