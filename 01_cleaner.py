@@ -146,4 +146,4 @@ def clean_batch_files(
 
 
 if __name__ == "__main__":
-    clean_batch_files("./红楼梦_干净正文.txt", "./processed_data/01_cleaned_segments.json")
+    clean_batch_files("./红楼梦.txt", "./processed_data/01_cleaned_segments.json")
