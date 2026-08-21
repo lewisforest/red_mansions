@@ -30,6 +30,21 @@ CHAPTER_PATTERN = re.compile(
 SENTENCE_END_CHARS = "。！？…”』"
 
 
+CANDIDATE_ENCODINGS = ['utf-8-sig', 'utf-8', 'gb18030', 'gbk', 'big5']
+
+
+def _read_file_auto_encoding(filepath: str):
+    """自动探测编码读取，避免因为编码猜错导致整段乱码（老 txt 资源常见 GBK）"""
+    with open(filepath, 'rb') as f:
+        raw_bytes = f.read()
+    for enc in CANDIDATE_ENCODINGS:
+        try:
+            return raw_bytes.decode(enc), enc
+        except (UnicodeDecodeError, LookupError):
+            continue
+    return raw_bytes.decode('utf-8', errors='ignore'), 'utf-8(ignore)'
+
+
 def _check_bracket_balance(text: str, chapter_label: str):
     """检查〔〕数量是否配对，不配对说明原始文本可能缺了收尾符号"""
     open_count = text.count("〔")
@@ -117,21 +132,38 @@ def clean_single_text(raw_text: str, min_chars: int = 800, max_chars: int = 1500
 
 
 def clean_batch_files(
-    input_file: str,
+    input_dir: str,
     output_file: str,
     min_chars: int = 800,
     max_chars: int = 1500,
 ):
-    """单文件清洗入口"""
-    if not os.path.exists(input_file):
-        print(f"❌ 找不到输入文件: {input_file}")
+    """
+    批量清洗入口——接收一个【目录】，遍历目录下所有 .txt 文件。
+    目录里哪怕只有一个文件也完全没问题，直接把整理好的原文单独放进这个
+    目录（比如 ./脂砚斋评红楼梦/红楼梦_干净正文.txt）即可，不需要额外处理。
+    """
+    if not os.path.exists(input_dir):
+        print(f"❌ 找不到目录: {input_dir}")
+        return []
+    if not os.path.isdir(input_dir):
+        print(f"❌ {input_dir} 不是一个目录。如果你想直接清洗单个文件，"
+              f"请把这个 txt 放进一个文件夹里，再把文件夹路径传进来。")
         return []
 
-    with open(input_file, "r", encoding="utf-8") as f:
-        raw_text = f.read()
+    files = sorted(f for f in os.listdir(input_dir) if f.endswith(".txt"))
+    if not files:
+        print(f"⚠️ {input_dir} 下没有找到任何 .txt 文件")
+        return []
 
-    print(f"正在清洗文本: {input_file}...")
-    all_chunks = clean_single_text(raw_text, min_chars=min_chars, max_chars=max_chars)
+    all_chunks = []
+    for filename in files:
+        filepath = os.path.join(input_dir, filename)
+        print(f"正在清洗文件: {filename}...")
+        raw_text, encoding_used = _read_file_auto_encoding(filepath)
+        print(f"  （识别编码: {encoding_used}）")
+        chunks = clean_single_text(raw_text, min_chars=min_chars, max_chars=max_chars)
+        all_chunks.extend(chunks)
+        print(f"  -> 本文件生成 {len(chunks)} 个段落块")
 
     for idx, chunk in enumerate(all_chunks, start=1):
         chunk["segment_id"] = idx
@@ -141,9 +173,10 @@ def clean_batch_files(
         json.dump(all_chunks, f, ensure_ascii=False, indent=2)
 
     unique_chapters = len({c["chapter"] for c in all_chunks})
-    print(f"✅ 清洗完成！生成 {len(all_chunks)} 个段落块，覆盖 {unique_chapters} 个回目/单元。")
+    print(f"✅ 清洗完成！共处理 {len(files)} 个文件，生成 {len(all_chunks)} 个段落块，"
+          f"覆盖 {unique_chapters} 个回目/单元。")
     return all_chunks
 
 
 if __name__ == "__main__":
-    clean_batch_files("./红楼梦.txt", "./processed_data/01_cleaned_segments.json")
+    clean_batch_files("./脂砚斋评红楼梦", "./processed_data/01_cleaned_segments.json")
