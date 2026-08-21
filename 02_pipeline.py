@@ -44,24 +44,46 @@ PROMPT_TEMPLATE = """你是一个严谨的文本实体抽取助手。请阅读�
 """
 
 
-def _clean_and_parse_json(raw: str) -> dict:
-    """清理并容错解析 LLM 输出的 JSON"""
-    raw = re.sub(r'^```json\s*', '', raw, flags=re.MULTILINE | re.IGNORECASE)
-    raw = re.sub(r'^```\s*', '', raw, flags=re.MULTILINE)
+def _normalize_and_parse_json(raw: str) -> dict:
+    """
+    清理并容错解析 LLM 输出的 JSON，分层尝试：
+    1. 直接解析
+    2. 全角标点归一化（，－>, ：－>:）—— 这一步是安全的，因为 JSON 本身不关心
+       字符串【内容】里用什么标点，只关心【结构分隔符】必须是半角。模型在长
+       列表里偶尔会把元素之间的逗号打成全角，这一步专门修这个。
+    3. 两个引号直接相邻但中间漏了逗号（常见于很长的人物名单，模型数着数着
+       漏打一个逗号）
+    4. 截断兜底：结尾没闭合的括号/引号，尝试补全
+    """
+    text = raw
+    text = re.sub(r'^```json\s*', '', text, flags=re.MULTILINE | re.IGNORECASE)
+    text = re.sub(r'^```\s*', '', text, flags=re.MULTILINE)
 
-    start = raw.find('{')
-    end = raw.rfind('}')
+    start = text.find('{')
+    end = text.rfind('}')
     if start != -1 and end != -1:
-        raw = raw[start:end + 1]
+        text = text[start:end + 1]
     elif start != -1:
-        raw = raw[start:]
+        text = text[start:]
 
     try:
-        return json.loads(raw)
+        return json.loads(text)
     except json.JSONDecodeError:
         pass
 
-    fixed_raw = raw.strip()
+    normalized = text.replace('，', ',').replace('：', ':')
+    try:
+        return json.loads(normalized)
+    except json.JSONDecodeError:
+        pass
+
+    comma_fixed = re.sub(r'"\s*\n?\s*"', '", "', normalized)
+    try:
+        return json.loads(comma_fixed)
+    except json.JSONDecodeError:
+        pass
+
+    fixed_raw = comma_fixed.strip()
     if not fixed_raw.endswith('}'):
         if not fixed_raw.endswith('"') and not fixed_raw.endswith(']'):
             fixed_raw += '"'
@@ -73,21 +95,51 @@ def _clean_and_parse_json(raw: str) -> dict:
     try:
         return json.loads(fixed_raw)
     except json.JSONDecodeError as e:
-        raise ValueError(f"JSON 修复失败: {str(e)} | 原输出前100字: {raw[:100]}")
+        raise ValueError(f"JSON 修复失败: {str(e)} | 原始长度 {len(raw)} 字 | 前200字: {raw[:200]}")
 
 
-def _call_ollama_with_retry(payload, session, max_retries=3, timeout=60):
+def _call_ollama_with_retry(base_payload, session, max_retries=3, base_timeout=60,
+                             debug_log_path=None, seg_id=None):
+    """
+    重试时会逐步放宽资源，而不是原样重复请求：
+    - num_predict 每次重试 +300（上限 1500）：应对"人物列表太长被截断"
+    - temperature 每次重试 +0.2：温度为 0 时同一输入会生成完全相同的（有问题
+      的）输出，重试without改变任何参数等于白跑；给一点随机性才有机会跳出
+      同样的截断/漏逗号模式
+    - timeout 每次重试 +30s：给生成更多内容留出时间
+    最终仍然失败会把原始响应写入 debug_log_path，方便事后排查而不用重新触发。
+    """
+    last_raw = None
+    last_err = None
     for attempt in range(1, max_retries + 1):
+        payload = json.loads(json.dumps(base_payload))  # 深拷贝，避免多次尝试互相污染
+        options = payload["options"]
+        if attempt > 1:
+            options["num_predict"] = min(options.get("num_predict", 512) + 300 * (attempt - 1), 1500)
+            options["temperature"] = round(0.2 * (attempt - 1), 2)
+        timeout = base_timeout + 30 * (attempt - 1)
+
         try:
             resp = session.post(OLLAMA_URL, json=payload, timeout=timeout)
             resp.raise_for_status()
             raw_res = resp.json().get("response", "")
-            parsed = _clean_and_parse_json(raw_res)
+            last_raw = raw_res
+            parsed = _normalize_and_parse_json(raw_res)
             return parsed, None
         except Exception as e:
+            last_err = str(e)
             if attempt == max_retries:
-                return None, str(e)
+                if debug_log_path and seg_id is not None:
+                    try:
+                        with open(debug_log_path, "a", encoding="utf-8") as logf:
+                            logf.write(json.dumps(
+                                {"segment_id": seg_id, "error": last_err, "raw_response": last_raw},
+                                ensure_ascii=False) + "\n")
+                    except Exception:
+                        pass
+                return None, last_err
             time.sleep(2)
+    return None, last_err
 
 
 def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
