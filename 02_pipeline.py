@@ -147,7 +147,7 @@ def _call_ollama_with_retry(base_payload, session, max_retries=3, timeout=90,
 def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
                   output_file="./processed_data/02_llm_extractions.json",
                   model_name="gemma3:12b",
-                  timeout=90,
+                  timeout=120,
                   max_retries=3,
                   debug_log_path="./processed_data/02_debug_failures.jsonl"):
     if not os.path.exists(input_file):
@@ -218,8 +218,13 @@ def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
             "keep_alive": "1h",
             "options": {
                 "temperature": 0.0,
-                "num_ctx": 2048,
-                "num_predict": 768,  # 一次性调高到 768（不随重试再涨），覆盖人物较多的章节
+                # num_ctx 是"输入+输出"加起来的硬上限，不是只管输出。段落块最长
+                # 到 1500 字，中文分词大约 1.3~2 token/字，正文本身就可能吃到
+                # 1900~3000 token，2048 根本不够用——不管 num_predict 设多大，
+                # 模型能用来生成 JSON 的空间可能已经所剩无几甚至溢出，这才是
+                # 反复截断/超时的根因，跟 temperature 无关。调到 4096 留足余量。
+                "num_ctx": 4096,
+                "num_predict": 768,
             },
         }
 
