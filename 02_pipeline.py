@@ -98,26 +98,28 @@ def _normalize_and_parse_json(raw: str) -> dict:
         raise ValueError(f"JSON 修复失败: {str(e)} | 原始长度 {len(raw)} 字 | 前200字: {raw[:200]}")
 
 
-def _call_ollama_with_retry(base_payload, session, max_retries=3, base_timeout=60,
+def _call_ollama_with_retry(base_payload, session, max_retries=3, timeout=90,
                              debug_log_path=None, seg_id=None):
     """
-    重试时会逐步放宽资源，而不是原样重复请求：
-    - num_predict 每次重试 +300（上限 1500）：应对"人物列表太长被截断"
-    - temperature 每次重试 +0.2：温度为 0 时同一输入会生成完全相同的（有问题
-      的）输出，重试without改变任何参数等于白跑；给一点随机性才有机会跳出
-      同样的截断/漏逗号模式
-    - timeout 每次重试 +30s：给生成更多内容留出时间
-    最终仍然失败会把原始响应写入 debug_log_path，方便事后排查而不用重新触发。
+    重试策略：num_predict 和 timeout 都【固定不变】，只在重试时小幅调高
+    temperature（0 -> 0.15 -> 0.3）。
+
+    之前版本让 num_predict/timeout 随重试次数一路往上加，本意是应对"长人物
+    列表被截断"，但代价是：一旦某段真的需要重试，请求会被要求生成更多内容、
+    并且给更长时间去生成——在本来就吃力的硬件上，这会让"重试"比"不重试"
+    还慢，是设计方向错了。现在改成固定预算：重试的价值只在于用不同的
+    temperature 让模型跳出"对同一输入生成一模一样的截断结果"这个死循环，
+    而不是靠给更多预算去"喂饱"它。
+
+    最终仍然失败的会把原始响应写入 debug_log_path，方便事后排查具体哪里
+    出的问题，不用重新触发一次请求。
     """
     last_raw = None
     last_err = None
     for attempt in range(1, max_retries + 1):
         payload = json.loads(json.dumps(base_payload))  # 深拷贝，避免多次尝试互相污染
-        options = payload["options"]
         if attempt > 1:
-            options["num_predict"] = min(options.get("num_predict", 512) + 300 * (attempt - 1), 1500)
-            options["temperature"] = round(0.2 * (attempt - 1), 2)
-        timeout = base_timeout + 30 * (attempt - 1)
+            payload["options"]["temperature"] = round(0.15 * (attempt - 1), 2)
 
         try:
             resp = session.post(OLLAMA_URL, json=payload, timeout=timeout)
@@ -145,8 +147,9 @@ def _call_ollama_with_retry(base_payload, session, max_retries=3, base_timeout=6
 def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
                   output_file="./processed_data/02_llm_extractions.json",
                   model_name="gemma3:12b",
-                  timeout=60,
-                  max_retries=3):
+                  timeout=90,
+                  max_retries=3,
+                  debug_log_path="./processed_data/02_debug_failures.jsonl"):
     if not os.path.exists(input_file):
         print(f"❌ 找不到输入文件 {input_file}")
         return
@@ -216,14 +219,17 @@ def run_pipeline(input_file="./processed_data/01_cleaned_segments.json",
             "options": {
                 "temperature": 0.0,
                 "num_ctx": 2048,
-                "num_predict": 512,
+                "num_predict": 768,  # 一次性调高到 768（不随重试再涨），覆盖人物较多的章节
             },
         }
 
         req_start = time.time()
         print(f"[{idx}/{total_todo}] 正在抽取 ID:{seg_id} ...", end="", flush=True)
 
-        parsed, err_msg = _call_ollama_with_retry(payload, session, max_retries=max_retries, base_timeout=timeout)
+        parsed, err_msg = _call_ollama_with_retry(
+            payload, session, max_retries=max_retries, timeout=timeout,
+            debug_log_path=debug_log_path, seg_id=seg_id,
+        )
 
         if parsed:
             record = {
