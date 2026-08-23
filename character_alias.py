@@ -7,17 +7,14 @@ character_alias.py
 
 from typing import Dict, List, Set, Tuple
 
-# 1. 男仆/管家列表：自动派生其妻子的“某某家的”独立节点
 COUPLE_HUSBANDS = [
     "林之孝", "周瑞", "赖大", "王善保", "吴新登",
     "乌进孝", "包勇", "吴贵", "郑好时", "秦显"
 ]
 
-# 2. 全量人物与别名原表 (标准名 -> 别名列表)
 RAW_CHARACTER_MAP: Dict[str, List[str]] = {
-    # === 十二金钗及主要女性 ===
     "贾宝玉": ["宝玉", "宝二爷", "怡红公子", "绛洞花主", "爱哥哥", "神瑛侍者", "宝兄弟", "富贵闲人"],
-    "林黛玉": ["黛玉", "林妹妹", "颦颦", "潇湘妃子", "颦儿", "绛珠仙草", "绛珠仙子", "潇湘馆主", "林姑娘", "林丫头","林潇湘", "女学生"],
+    "林黛玉": ["黛玉", "林妹妹", "颦颦", "潇湘妃子", "颦儿", "绛珠仙草", "绛珠仙子", "潇湘馆主", "林姑娘", "林丫头", "林潇湘", "女学生"],
     "薛宝钗": ["宝钗", "宝姐姐", "宝姑娘", "蘅芜君", "薛姑娘", "宝丫头", "蘅芜女"],
     "王熙凤": ["凤姐", "凤姐儿", "琏二奶奶", "凤辣子", "凤丫头", "熙凤", "凤哥儿", "阿凤"],
     "贾母": ["老祖宗", "老太太", "史太君", "太夫人", "贾老夫人"],
@@ -29,12 +26,11 @@ RAW_CHARACTER_MAP: Dict[str, List[str]] = {
     "贾探春": ["探春", "三姑娘", "蕉下客", "敏探春", "三小姐"],
     "贾惜春": ["惜春", "四姑娘", "勘破三春", "四小姐"],
     "秦可卿": ["可卿", "蓉大奶奶", "大奶奶", "兼美", "秦氏", "官氏", "可儿"],
-    "警幻仙子": ["仙姑", "警幻仙姑","警幻"],
+    "警幻仙子": ["仙姑", "警幻仙姑", "警幻"],
     "夏金桂": ["金桂"],
     "贾巧姐": ["巧姐", "巧姐儿"],
     "贾大姐": ["大姐儿"],
 
-    # === 贾府男丁及长辈 ===
     "贾政": ["存周", "政老爹", "政老爷", "政公"],
     "贾敏": ["贾夫人"],
     "贾赦": ["恩侯", "赦老爹", "赦老爷", "赦公"],
@@ -52,14 +48,12 @@ RAW_CHARACTER_MAP: Dict[str, List[str]] = {
     "贾代化": ["代化"],
     "贾代修": ["代修"],
     "贾代善": ["代善"],
-    "林如海":["林海", "如海"],
-    "秦钟": ["秦相公"],
-    "贾雨村": ["雨村", "时飞", "贾时飞"],
+    "林如海": ["林海", "如海"],
+    "贾雨村": ["雨村", "时飞", "贾时飞", "贾化", "语村"],
     "甄士隐": ["士隐", "费", "甄费"],
     "冷子兴": ["子兴"],
     "北静王": ["水溶"],
 
-    # === 薛家与王家 ===
     "薛蟠": ["薛大爷", "呆霸王", "薛大哥", "文龙"],
     "薛宝琴": ["宝琴", "琴妹妹", "琴姑娘"],
     "薛蝌": ["蝌哥", "蝌哥儿"],
@@ -71,11 +65,10 @@ RAW_CHARACTER_MAP: Dict[str, List[str]] = {
     "王仁": ["王仁"],
     "王夫人": ["王夫人", "太太", "二太太"],
 
-    # === 丫鬟与侍女 ===
     "香菱": ["英莲", "甄英莲", "秋菱", "菱角儿"],
     "袭人": ["花袭人", "珍珠"],
     "紫鹃": ["鹦哥", "紫鹃妹妹"],
-    "莺儿": ["黄金莺", "掌珠","金莺"],
+    "莺儿": ["黄金莺", "掌珠", "金莺"],
     "晴雯": ["勇晴雯"],
     "鸳鸯": ["金鸳鸯", "鸳鸯女"],
     "平儿": ["平姑娘"],
@@ -94,7 +87,6 @@ RAW_CHARACTER_MAP: Dict[str, List[str]] = {
     "林红玉": ["小红", "红玉"],
     "琥珀": ["琥珀"],
 
-    # === 小厮、戏子与外人 ===
     "茗烟": ["茗烟"],
     "焙茗": ["焙茗"],
     "蒋玉菡": ["琪官"],
@@ -102,17 +94,13 @@ RAW_CHARACTER_MAP: Dict[str, List[str]] = {
     "龄官": ["龄官"],
     "藕官": ["藕官"],
     "蕊官": ["蕊官"],
-    "秦钟": ["秦锺", "鲸卿"],
+    "秦钟": ["秦锺", "鲸卿", "秦相公"],
     "柳湘莲": ["柳二郎", "冷面郎君", "湘莲"],
-    "贾雨村": ["雨村", "贾化", "语村"],
-    "甄士隐": ["士隐", "甄费"],
     "刘姥姥": ["刘老老"],
     "焦大": ["焦大"],
     "戴权": ["载权"],
-    "冷子兴": ["冷子兴"],
     "石呆子": ["石呆子"],
 
-    # === 家人管家夫妻 ===
     "林之孝": ["林管家"],
     "林之孝家的": ["林之孝家", "双管家"],
     "周瑞": ["周瑞"],
@@ -122,7 +110,6 @@ RAW_CHARACTER_MAP: Dict[str, List[str]] = {
     "王善保家的": ["王善保家"],
 }
 
-# 非实体噪声词过滤集合
 NOISE_WORDS: Set[str] = {
     "吉时", "一行", "贾府三艳", "婆子", "老婆子", "和尚", "道人", "道士", "先生",
     "小厮", "小丫头们", "小丫头", "姊妹", "媳妇", "众丫鬟", "众人", "丫头", "姑娘",
@@ -132,21 +119,18 @@ NOISE_WORDS: Set[str] = {
 
 
 def _build_alias_structures() -> Tuple[Dict[str, str], List[Tuple[str, str]]]:
-    """构建扁平 ALIAS_MAP 及按字符串长度降序排列的元组列表"""
     flat_map = {}
     for canon, aliases in RAW_CHARACTER_MAP.items():
         flat_map[canon] = canon
         for alias in aliases:
             flat_map[alias] = canon
 
-    # 自动补充男仆妻子的派生词（如 "吴新登家的" -> "吴新登家的"）
     for husband in COUPLE_HUSBANDS:
         wife_canon = f"{husband}家的"
         if wife_canon not in flat_map:
             flat_map[wife_canon] = wife_canon
             flat_map[f"{husband}家"] = wife_canon
 
-    # 按 Key 长度由大到小排序，确保长别名（如 "林之孝家的"）优先于短别名（如 "林之孝"）被命中
     sorted_tuples = sorted(flat_map.items(), key=lambda x: len(x[0]), reverse=True)
     return flat_map, sorted_tuples
 
@@ -155,18 +139,15 @@ ALIAS_MAP, SORTED_ALIAS_TUPLES = _build_alias_structures()
 
 
 def clean_character_name(raw_name: str):
-    """清理单个人名：最长前缀优先映射到标准名；噪声词/非法名返回 None"""
     if not raw_name:
         return None
-    name = str(raw_name).strip(" '\"‘’“”")
+    name = str(raw_name).strip(" '\"\u2018\u2019\u201c\u201d")
     if not name or name in NOISE_WORDS:
         return None
 
-    # 1. 精确匹配
     if name in ALIAS_MAP:
         canonical = ALIAS_MAP[name]
     else:
-        # 2. 长词优先子串匹配（剥离后缀动作或修饰词，如 "林之孝家的回话" -> "林之孝家的"）
         canonical = None
         for alias, canon in SORTED_ALIAS_TUPLES:
             if len(alias) >= 2 and alias in name:
@@ -181,7 +162,6 @@ def clean_character_name(raw_name: str):
 
 
 def clean_character_list(raw_names) -> list:
-    """批量清理 + 去重，保持首次出现的顺序"""
     cleaned = []
     seen = set()
     for raw in raw_names or []:
@@ -193,7 +173,6 @@ def clean_character_list(raw_names) -> list:
 
 
 def get_all_aliases(canonical_name: str) -> list:
-    """反查一个标准名对应的所有别名（含标准名本身），用于逆向校验人物是否真的出现在文本里"""
     names = [canonical_name]
     for alias, canon in ALIAS_MAP.items():
         if canon == canonical_name and alias not in names:
@@ -202,5 +181,4 @@ def get_all_aliases(canonical_name: str) -> list:
 
 
 def is_character_grounded(canonical_name: str, text: str) -> bool:
-    """判断某标准人名（或其任一别名）是否真的出现在给定文本里，用于剔除 LLM 虚假挂载的人物"""
     return any(name in (text or "") for name in get_all_aliases(canonical_name))
