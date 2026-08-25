@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 character_alias.py
-全书人物"别名 -> 标准名"的统一映射表，被 03_character_network.py 和
-04_timeline_aligner.py 共用。
+全书人物"别名 -> 标准名"的统一映射表，被 02/03/04 各阶段共用。
+
+本文件职责单一：只做人物称谓归一化（alias -> canonical name），
+不包含任何人物关系（父子/夫妻/主仆等）的硬编码判断——关系由
+03_character_network.py 从 02 阶段的抽取结果里统计推理得到。
 """
 
 from typing import Dict, List, Set, Tuple
@@ -14,6 +17,7 @@ COUPLE_HUSBANDS = [
 
 RAW_CHARACTER_MAP: Dict[str, List[str]] = {
     "贾宝玉": ["宝玉", "宝二爷", "怡红公子", "绛洞花主", "爱哥哥", "神瑛侍者", "宝兄弟", "富贵闲人"],
+    "通灵宝玉": ["顽石", "此石", "石兄", "石道", "补天石", "顽石三万六千五百零一块", "石头"],
     "林黛玉": ["黛玉", "林妹妹", "颦颦", "潇湘妃子", "颦儿", "绛珠仙草", "绛珠仙子", "潇湘馆主", "林姑娘", "林丫头", "林潇湘", "女学生"],
     "薛宝钗": ["宝钗", "宝姐姐", "宝姑娘", "蘅芜君", "薛姑娘", "宝丫头", "蘅芜女"],
     "王熙凤": ["凤姐", "凤姐儿", "琏二奶奶", "凤辣子", "凤丫头", "熙凤", "凤哥儿", "阿凤"],
@@ -32,7 +36,7 @@ RAW_CHARACTER_MAP: Dict[str, List[str]] = {
     "贾大姐": ["大姐儿"],
 
     "贾政": ["存周", "政老爹", "政老爷", "政公"],
-    "贾敏": ["贾夫人"],
+    "贾敏": ["贾夫人", "贾氏夫人", "贾氏"],
     "贾赦": ["恩侯", "赦老爹", "赦老爷", "赦公"],
     "贾敬": ["敬老爷", "敬公"],
     "贾琏": ["琏二爷", "琏爷", "琏哥儿", "琏弟"],
@@ -182,3 +186,7 @@ def get_all_aliases(canonical_name: str) -> list:
 
 def is_character_grounded(canonical_name: str, text: str) -> bool:
     return any(name in (text or "") for name in get_all_aliases(canonical_name))
+
+def get_primary_characters(min_aliases: int = 4):
+    """别名数量达到阈值的视为主要人物，用于年龄追踪等下游筛选"""
+    return {canon for canon, aliases in RAW_CHARACTER_MAP.items() if len(aliases) >= min_aliases}
