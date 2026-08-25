@@ -1,110 +1,142 @@
 # -*- coding: utf-8 -*-
 """
-03_character_network.py
-基于段落人物共现自动构建人物关系网络图谱。
-
-本版改动：
-1. 别名映射改为从 character_alias.py 导入共享的 ALIAS_MAP/NOISE_WORDS，
-   不再自己维护一份——避免和 04_timeline_aligner.py 用的映射表不一致，
-   导致同一人物在网络和时间线里被算成两个不同的名字。
-2. 每条边（人物关系）额外记录几条"共同出现时的具体事件"作为示例，
-   这样这份网络不只是一堆抽象的数字权重，而是能直接给 04 提供"这两个人
-   在什么情境下产生关联"的证据，也是人在看报告时判断关系是否靠谱的依据。
-3. 记录每个人物"首次出场"的章节和 segment_id，供后续排查/展示用。
+03_character_network.py (升级版：支持事件级 active/mentioned 关联计算)
 """
+
 import json
 import os
 from collections import Counter, defaultdict
+from itertools import combinations
+from character_alias import is_character_grounded
 
-from character_alias import clean_character_list, is_character_grounded
+EVENT_ACTIVE_WEIGHT = 3    # 同一微事件内同时出场（强互动）
+EVENT_MENTION_WEIGHT = 1   # 在对话/思考中被提及（弱关联）
+MAX_EVIDENCE_PER_EDGE = 5
+
+def _extract_leading_number(filename: str):
+    m = re.match(r"^0*(\d+)", filename)
+    return int(m.group(1)) if m else None
+
+def build_network(records: list) -> dict:
+    node_freq = Counter()
+    edge_weight = Counter()
+    segment_co_count = Counter()
+    event_co_count = Counter()
+    edge_evidence = defaultdict(list)
+
+    for r in records:
+        if r.get("error"):
+            continue
+
+        events = r.get("events", [])
+
+        # 如果有事件列表，走精细化事件级统计；若无，降级走顶层汇总统计
+        if events:
+            for ev in events:
+                actives = ev.get("active_characters", [])
+                mentions = ev.get("mentioned_characters", [])
+
+                # 1. 统计节点频次（仅计算真实出场角色）
+                for c in actives:
+                    node_freq[c] += 1
+
+                # 2. 强关联：同一事件中同时出场的人物 (Active - Active)
+                for pair in combinations(dict.fromkeys(actives), 2):
+                    key = tuple(sorted(pair))
+                    edge_weight[key] += EVENT_ACTIVE_WEIGHT
+                    event_co_count[key] += 1
+
+                    if len(edge_evidence[key]) < MAX_EVIDENCE_PER_EDGE:
+                        edge_evidence[key].append({
+                            "segment_id": r.get("segment_id"),
+                            "chapter": r.get("chapter"),
+                            "event_summary": ev.get("summary")
+                        })
+
+                # 3. 弱关联：出场人物提及第三方 (Active - Mentioned)
+                for a in actives:
+                    for m in mentions:
+                        if a != m:
+                            key = tuple(sorted([a, m]))
+                            edge_weight[key] += EVENT_MENTION_WEIGHT
+                            event_co_count[key] += 1
+
+        else:
+            # 降级备用逻辑：兼容旧格式
+            chars_present = r.get("characters_present", [])
+            for c in chars_present:
+                node_freq[c] += 1
+            for pair in combinations(dict.fromkeys(chars_present), 2):
+                key = tuple(sorted(pair))
+                edge_weight[key] += 1
+                segment_co_count[key] += 1
+
+    edges = []
+    for key, weight in edge_weight.items():
+        edges.append({
+            "source": key[0],
+            "target": key[1],
+            "weight": weight,
+            "event_comention": event_co_count.get(key, 0),
+            "segment_cooccurrence": segment_co_count.get(key, 0),
+            "evidence": edge_evidence.get(key, []),
+        })
+
+    edges.sort(key=lambda e: e["weight"], reverse=True)
+    nodes = [{"name": name, "appearance_count": cnt}
+             for name, cnt in sorted(node_freq.items(), key=lambda x: -x[1])]
+
+    return {"nodes": nodes, "edges": edges}
 
 
-def build_character_network(input_file="./processed_data/02_llm_extractions.json",
-                             output_file="./processed_data/03_character_network.json",
-                             min_cooccurrence=2,
-                             max_sample_events=3):
+def _try_export_graphml(network: dict, output_file: str):
+    try:
+        import networkx as nx
+    except ImportError:
+        return
+
+    g = nx.Graph()
+    for node in network["nodes"]:
+        g.add_node(node["name"], appearance_count=node["appearance_count"])
+    for edge in network["edges"]:
+        g.add_edge(edge["source"], edge["target"], weight=edge["weight"],
+                   event_comention=edge["event_comention"])
+
+    graphml_path = os.path.splitext(output_file)[0] + ".graphml"
+    nx.write_graphml(g, graphml_path)
+    print(f"  📈 已额外导出 GraphML: {graphml_path}")
+
+def clean_batch_files(input_dir, output_file, min_chars=800, max_chars=1500):
+    raw_files = [f for f in os.listdir(input_dir) if f.endswith(".txt")]
+    files = sorted(
+        raw_files,
+        key=lambda f: (_extract_leading_number(f) is None, _extract_leading_number(f) or 0, f)
+    )
+    # 建议加一行自检打印，方便你人工确认顺序对不对
+    print("文件处理顺序：", files)
+
+
+def build_and_save_network(input_file="./processed_data/02_llm_extractions.json",
+                           output_file="./processed_data/03_character_network.json"):
     if not os.path.exists(input_file):
         print(f"❌ 找不到输入文件 {input_file}")
         return
 
     with open(input_file, "r", encoding="utf-8") as f:
-        extractions = json.load(f)
+        records = json.load(f)
 
-    # 按 segment_id 排序，保证"首次出场"的判断是按真实阅读顺序来的
-    extractions = sorted(extractions, key=lambda x: x.get("segment_id", 0))
+    network = build_network(records)
 
-    char_freq = Counter()
-    first_seen = {}  # canonical_name -> {"chapter":..., "segment_id":...}
-    co_occurrence = defaultdict(int)
-    co_occurrence_events = defaultdict(list)  # pair -> [事件描述, ...]
-
-    for item in extractions:
-        if item.get("error"):
-            continue
-
-        cleaned_chars = clean_character_list(item.get("characters_present", []))
-        events = item.get("core_events", []) or []
-        event_text = "；".join(events)
-
-        # 逆向校验：和 04_timeline_aligner.py 用的是同一套逻辑——如果 LLM 把某个
-        # 人物挂到了这一段，但事件文本里根本没提到这个人（也没提到任何别名），
-        # 就不计入网络统计。这一步如果不做，03 统计出来的网络会包含一些 04 最终
-        # 过滤掉的"虚假挂载"人物，两边人物集合对不上，就是"网络和时间线不契合"
-        # 的直接原因之一。
-        cleaned_chars = [c for c in cleaned_chars if is_character_grounded(c, event_text)]
-
-        for c in cleaned_chars:
-            char_freq[c] += 1
-            if c not in first_seen:
-                first_seen[c] = {
-                    "chapter": item.get("chapter", "未知章节"),
-                    "segment_id": item.get("segment_id"),
-                }
-
-        for i in range(len(cleaned_chars)):
-            for j in range(i + 1, len(cleaned_chars)):
-                pair = tuple(sorted([cleaned_chars[i], cleaned_chars[j]]))
-                co_occurrence[pair] += 1
-                if event_text and len(co_occurrence_events[pair]) < max_sample_events:
-                    if event_text not in co_occurrence_events[pair]:
-                        co_occurrence_events[pair].append(event_text)
-
-    nodes = [
-        {
-            "id": name,
-            "label": name,
-            "degree": count,
-            "first_seen_chapter": first_seen.get(name, {}).get("chapter"),
-            "first_seen_segment_id": first_seen.get(name, {}).get("segment_id"),
-        }
-        for name, count in char_freq.items()
-    ]
-
-    edges = []
-    for (source, target), weight in co_occurrence.items():
-        if weight >= min_cooccurrence:
-            edges.append({
-                "source": source,
-                "target": target,
-                "weight": weight,
-                "sample_events": co_occurrence_events.get((source, target), []),
-            })
-
-    network_data = {
-        "stats": {
-            "total_characters": len(nodes),
-            "total_relations": len(edges),
-        },
-        "nodes": sorted(nodes, key=lambda x: x["degree"], reverse=True),
-        "edges": sorted(edges, key=lambda x: x["weight"], reverse=True),
-    }
-
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    os.makedirs(os.path.dirname(output_file) or ".", exist_ok=True)
     with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(network_data, f, ensure_ascii=False, indent=2)
+        json.dump(network, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ 人物网络构建完成！清洗后剩余 {len(nodes)} 个核心角色，{len(edges)} 条有效关系边。")
+    print(f"✅ 人物关系网络已生成：{len(network['nodes'])} 个人物节点，"
+          f"{len(network['edges'])} 条关系边 -> {output_file}")
+
+    _try_export_graphml(network, output_file)
+    return network
 
 
 if __name__ == "__main__":
-    build_character_network()
+    build_and_save_network()
