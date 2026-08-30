@@ -92,6 +92,30 @@ ELAPSED_YEARS_PATTERN = re.compile(
     r"(?:过了|隔了|又过|已过|将有|将近)\s*([0-9]{1,2}|[〇零一二三四五六七八九十两]{1,3})\s*[年载]"
 )
 
+# 古文里用固定成语表达年龄，不带任何数字（比如"半百""弱冠""花甲"），
+# 之前的两个AGE_PATTERN都要求数字，完全覆盖不到这类表达——这正是甄士隐
+# "如今年已半百"完全没被抓到候选的原因。这类成语本质上和季节关键词一样，
+# 是固定词表查找，不需要模型判断，正则查表即可，零幻觉风险。
+# 部分成语年龄跨度较大（如"耄耋"），标记 is_approximate=True，供下游区别对待。
+IDIOM_AGE_KEYWORDS = {
+    "垂髫": (4, True),      # 幼儿，约3-8岁，取中位近似值
+    "总角": (8, True),      # 童年，约8-14岁
+    "豆蔻": (14, True),     # 女子十三四岁
+    "及笄": (15, False),    # 女子15岁，古代明确年龄标准
+    "束发": (15, False),    # 男子15岁
+    "弱冠": (20, False),    # 男子20岁
+    "而立": (30, False),
+    "不惑": (40, False),
+    "知天命": (50, False),
+    "半百": (50, False),
+    "知非之年": (50, False),
+    "花甲": (60, False),
+    "耳顺": (60, False),
+    "古稀": (70, False),
+    "耄耋": (85, True),     # 80-90岁，取中位近似值
+    "期颐": (100, False),
+}
+
 # 固定节日/时令关键词 -> 粗粒度季节（纯词表匹配，不需要模型判断）
 SEASON_KEYWORDS = {
     "元宵": "冬",   # 正月十五，农历冬末，习惯上归入"冬"
@@ -118,6 +142,36 @@ SEASON_KEYWORDS = {
 }
 
 SENTENCE_SPLIT_PATTERN = re.compile(r"[。！？；\n]")
+
+
+# "不到/将近/才/足/已满"这类限定词——出现在年龄数字前面时，说明这不是精确
+# 年龄，而是一个近似值/上下界，之前的正则会把"不到二十岁"直接简化成
+# "二十岁"，丢掉了"不到"这个关键限定，需要单独识别出来。
+BOUND_QUALIFIER_PATTERN = re.compile(r"(不到|将近|足|已满|不满|才|堪堪)\s*$")
+
+# 履历/人生节点关键词——出现这些词，说明句子描述的是某人"一生中的某个阶段"
+# （进学、及笄、出阁、生子、病故等），而不是"当前叙事时刻"的年龄，这种
+# 年龄不能拿来和别的"当前年龄"互相比较冲突，需要单独标记出来交给06分类。
+MILESTONE_KEYWORDS = [
+    "进学", "及笄", "弱冠", "出阁", "出嫁", "娶妻", "娶了妻", "生子", "生了子",
+    "病死", "病故", "亡故", "下世", "夭亡", "早逝", "登第", "中举", "及第",
+]
+
+
+def _detect_bound_qualifier(sentence: str, match_start: int) -> str:
+    """检查年龄数字前面紧邻的文字是否有限定词，返回 exact/less_than/about/at_least"""
+    prefix = sentence[max(0, match_start - 4):match_start]
+    m = BOUND_QUALIFIER_PATTERN.search(prefix)
+    if not m:
+        return "exact"
+    kw = m.group(1)
+    if kw in ("不到", "不满"):
+        return "less_than"
+    if kw in ("将近", "堪堪"):
+        return "about"
+    if kw in ("足", "已满"):
+        return "at_least"
+    return "exact"
 
 
 def _split_sentences(text: str):
@@ -163,14 +217,18 @@ def scan_segment(seg: dict) -> dict:
                 continue
             nearby = _find_nearby_characters(sentence, m.start())
             has_past_marker = any(kw in sentence for kw in PAST_RELATIVE_KEYWORDS)
+            has_milestone_kw = any(kw in sentence for kw in MILESTONE_KEYWORDS)
+            bound_type = _detect_bound_qualifier(sentence, m.start())
             age_candidates.append({
                 "sentence": sentence.strip(),
                 "stated_age": age_val,
                 "matched_text": m.group(0),
+                "bound_type": bound_type,  # exact/less_than/about/at_least
                 "candidate_characters": [c for _, c, _ in nearby],
                 "confidence": "high" if len(nearby) == 1 else ("ambiguous" if len(nearby) > 1 else "no_character_found"),
-                "needs_llm_review": has_past_marker or len(nearby) != 1,
+                "needs_llm_review": has_past_marker or has_milestone_kw or len(nearby) != 1,
                 "past_time_marker_detected": has_past_marker,
+                "milestone_keyword_detected": has_milestone_kw,
             })
 
         # --- 绝对年龄候选（"年已X"这类不带"岁"字的惯用语）---
@@ -180,14 +238,17 @@ def scan_segment(seg: dict) -> dict:
                 continue
             nearby = _find_nearby_characters(sentence, m.start())
             has_past_marker = any(kw in sentence for kw in PAST_RELATIVE_KEYWORDS)
+            has_milestone_kw = any(kw in sentence for kw in MILESTONE_KEYWORDS)
             age_candidates.append({
                 "sentence": sentence.strip(),
                 "stated_age": age_val,
                 "matched_text": m.group(0),
+                "bound_type": "exact",
                 "candidate_characters": [c for _, c, _ in nearby],
                 "confidence": "high" if len(nearby) == 1 else ("ambiguous" if len(nearby) > 1 else "no_character_found"),
-                "needs_llm_review": has_past_marker or len(nearby) != 1,
+                "needs_llm_review": has_past_marker or has_milestone_kw or len(nearby) != 1,
                 "past_time_marker_detected": has_past_marker,
+                "milestone_keyword_detected": has_milestone_kw,
             })
 
         # --- 比较级候选："比XX大/小N岁" ---
@@ -220,6 +281,33 @@ def scan_segment(seg: dict) -> dict:
                 "elapsed_years": years_val,
                 "candidate_characters_in_sentence": [c for _, c, _ in nearby],
             })
+
+        # --- 成语年龄候选（"半百""弱冠""花甲"这类不带数字的固定表达）---
+        # 之前只定义了 IDIOM_AGE_KEYWORDS 词表，忘了接入扫描循环，导致
+        # "如今年已半百"这种表达完全没被抓到候选，这里补上。
+        for kw, (age_val, is_approx) in IDIOM_AGE_KEYWORDS.items():
+            start_pos = sentence.find(kw)
+            while start_pos != -1:
+                nearby = _find_nearby_characters(sentence, start_pos)
+                has_past_marker = any(k in sentence for k in PAST_RELATIVE_KEYWORDS)
+                has_milestone_kw = any(k in sentence for k in MILESTONE_KEYWORDS)
+                age_candidates.append({
+                    "sentence": sentence.strip(),
+                    "stated_age": age_val,
+                    "matched_text": kw,
+                    "bound_type": "about" if is_approx else "exact",
+                    "is_idiom_age": True,  # 标记这是成语推算的年龄，不是原文直接写的数字
+                    "candidate_characters": [c for _, c, _ in nearby],
+                    # 成语年龄经常没有主语在同一句里（比如"如今年已半百"前面
+                    # 的主语"甄士隐"在上一句），这种情况下 candidate_characters
+                    # 会是空的，标记为 no_character_found，交给13结合全段原文
+                    # 去判断主语是谁，这里不用勉强
+                    "confidence": "high" if len(nearby) == 1 else ("ambiguous" if len(nearby) > 1 else "no_character_found"),
+                    "needs_llm_review": True,  # 成语年龄本身就不精确/常缺主语，一律送审
+                    "past_time_marker_detected": has_past_marker,
+                    "milestone_keyword_detected": has_milestone_kw,
+                })
+                start_pos = sentence.find(kw, start_pos + 1)
 
     season_candidates = []
     for keyword, season in SEASON_KEYWORDS.items():
