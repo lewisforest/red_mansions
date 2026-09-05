@@ -29,3 +29,15 @@ python main.py --raw-dir ./脂砚斋评红楼梦 --work-dir ./processed_data
 - PAST / PRESENT / FUTURE 只作为时间状态约束。
 - 保留 evidence、constraints、contradictions、unresolved，方便审计。
 - 不自动生成未经文本支持的公历年份。
+
+```
+项目/
+├── 01_cleaner.py
+├── 02_prescan_anchors.py
+├── 03_kinship_prescan.py
+├── 04_fused_corrected.py
+├── 05_timeline_builder.py
+├── character_alias.py
+├── main.py
+└── 脂砚斋评红楼梦/
+```
