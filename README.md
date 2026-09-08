@@ -1,5 +1,5 @@
 # 红楼梦时间线分析流水线
-
+```
 执行顺序：
 
 01_cleaner.py
@@ -20,6 +20,7 @@
 06_chronology_solver.py
   -> 06_chronology_solution.json
   -> 06_chronology_solution.md
+```
 
 
 统一入口：
