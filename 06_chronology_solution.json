@@ -1,0 +1,1837 @@
+{
+  "schema_version": "06.chronology.5",
+  "rules": {
+    "main_timeline_age": "只使用 PRESENT；PAST/None 不参与主时间传播",
+    "age_relationship": "直接使用 05_age_relationship_network 的年龄关系",
+    "patch": "patch 是事件->事件跨度，不等于整章->整章跨度",
+    "alignment": "patch 事件仅在同人物+同章节+同年龄时与 clean segment 零跨度对齐",
+    "age_expansion": "章节时间点上的已知人物通过年龄关系网络扩展相关人物",
+    "known_age_priority": "直接观察/patch 年龄优先于关系网络推导年龄；冲突值保留为 alternative_ages",
+    "chapter_sort": "从章节标题正则提取第X回数字后排序，并写入 chapter_number；主阅读表不按 relative_year 排序",
+    "manual_relations": "读取 04_manual.json 中指定人工有效关系，并按章节加入输出",
+    "unanchored": "没有时间约束连接的年龄仍然输出；主阅读表不显示 relative_year。"
+  },
+  "chapter_timeline": [
+    {
+      "chapter_number": 1,
+      "chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+      "characters": {
+        "甄士隐": {
+          "age": 50,
+          "source": "observed_or_patch",
+          "age_display": "50岁"
+        },
+        "香菱": {
+          "age": 5,
+          "source": "observed_or_patch",
+          "age_sequence": [
+            3,
+            5
+          ],
+          "age_display": "3岁→5岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "配偶",
+          "person_a": "甄士隐",
+          "person_b": "封氏",
+          "chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+          "chapter_number": 1,
+          "segment_id": 5,
+          "candidate_index": 0,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "5:kinship:0"
+        },
+        {
+          "relation": "亲子",
+          "person_a": "甄士隐",
+          "person_b": "香菱",
+          "chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+          "chapter_number": 1,
+          "segment_id": 5,
+          "candidate_index": 1,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "5:kinship:1"
+        }
+      ]
+    },
+    {
+      "chapter_number": 2,
+      "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "characters": {
+        "林如海": {
+          "age": 40,
+          "source": "observed_or_patch",
+          "age_display": "40岁"
+        },
+        "林黛玉": {
+          "age": 6,
+          "source": "observed_or_patch",
+          "age_sequence": [
+            5,
+            6
+          ],
+          "age_display": "5岁→6岁"
+        },
+        "贾珠": {
+          "age": 20,
+          "source": "observed_or_patch",
+          "age_display": "20岁"
+        },
+        "贾蓉": {
+          "age": 16,
+          "source": "observed_or_patch",
+          "age_display": "16岁"
+        },
+        "袭人": {
+          "age": 9,
+          "source": "observed_or_patch",
+          "age_display": "9岁"
+        },
+        "贾宝玉": {
+          "age": 7,
+          "source": "observed_or_patch",
+          "age_display": "7岁"
+        },
+        "贾芸": {
+          "age": 12,
+          "source": "observed_or_patch",
+          "age_display": "12岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "spouse",
+          "person_a": "贾雨村",
+          "person_b": "娇杏",
+          "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+          "chapter_number": 2,
+          "segment_id": 6,
+          "candidate_index": 1,
+          "status": "overridden",
+          "reason": "救回机器遗漏的正则物理线索",
+          "source": "04_manual",
+          "review_key": "6:kinship:1"
+        },
+        {
+          "relation": "spouse_of",
+          "person_a": "贾雨村",
+          "person_b": "贾雨村之嫡妻",
+          "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+          "chapter_number": 2,
+          "segment_id": 6,
+          "candidate_index": 0,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "6:kinship:0"
+        },
+        {
+          "relation": "亲子",
+          "person_a": "林如海",
+          "person_b": "林黛玉",
+          "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+          "chapter_number": 2,
+          "segment_id": 7,
+          "candidate_index": 0,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "7:kinship:0"
+        },
+        {
+          "relation": "parent",
+          "person_a": "贾敏",
+          "person_b": "林黛玉",
+          "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+          "chapter_number": 2,
+          "segment_id": 7,
+          "candidate_index": 1,
+          "status": "overridden",
+          "reason": "救回机器遗漏的正则物理线索",
+          "source": "04_manual",
+          "review_key": "7:kinship:1"
+        },
+        {
+          "relation": "parent",
+          "person_a": "贾氏",
+          "person_b": "林黛玉",
+          "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+          "chapter_number": 2,
+          "segment_id": 7,
+          "candidate_index": 2,
+          "status": "overridden",
+          "reason": "救回机器遗漏的正则物理线索",
+          "source": "04_manual",
+          "review_key": "7:kinship:2"
+        },
+        {
+          "relation": "亲子",
+          "person_a": "王氏（贾政之夫人）",
+          "person_b": "贾珠",
+          "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+          "chapter_number": 2,
+          "segment_id": 8,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "8:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 3,
+      "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+      "characters": {
+        "雪雁": {
+          "age": 10,
+          "source": "observed_or_patch",
+          "age_display": "10岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "亲子",
+          "person_a": "贾赦",
+          "person_b": "贾琏",
+          "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+          "chapter_number": 3,
+          "segment_id": 14,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "14:kinship:0"
+        },
+        {
+          "relation": "配偶",
+          "person_a": "贾赦",
+          "person_b": "邢夫人",
+          "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+          "chapter_number": 3,
+          "segment_id": 15,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "15:kinship:0"
+        },
+        {
+          "relation": "spouse_of_explicit",
+          "person_a": "贾珠",
+          "person_b": "李纨",
+          "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+          "chapter_number": 3,
+          "segment_id": 17,
+          "candidate_index": 1,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "17:kinship:1"
+        },
+        {
+          "relation": "parent",
+          "person_a": "薛姨妈",
+          "person_b": "薛蟠",
+          "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+          "chapter_number": 3,
+          "segment_id": 20,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "20:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 4,
+      "chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "characters": {
+        "薛姨妈": {
+          "age": 40,
+          "source": "observed_or_patch",
+          "age_display": "40岁"
+        },
+        "贾兰": {
+          "age": 5,
+          "source": "observed_or_patch",
+          "age_display": "5岁"
+        },
+        "香菱": {
+          "age": 13,
+          "source": "observed_or_patch",
+          "age_sequence": [
+            12,
+            13
+          ],
+          "age_display": "12岁→13岁"
+        },
+        "贾环": {
+          "age": 7,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "薛姨妈",
+            "relationship": "Age(薛姨妈) - Age(贾环) = 33",
+            "edge_source": "transitive_closure",
+            "segment_id": null,
+            "context_id": null
+          },
+          "age_display": "7岁"
+        },
+        "甄士隐": {
+          "age": 60,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "香菱",
+            "relationship": "Age(香菱) - Age(甄士隐) = -47",
+            "edge_source": "same_segment_present_absolute_age",
+            "segment_id": 5,
+            "context_id": "SEGMENT::5"
+          },
+          "age_display": "60岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 5,
+      "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "配偶",
+          "person_a": "贾珍",
+          "person_b": "尤氏",
+          "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+          "chapter_number": 5,
+          "segment_id": 22,
+          "candidate_index": 0,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "22:kinship:0"
+        },
+        {
+          "relation": "配偶",
+          "person_a": "贾蓉",
+          "person_b": "秦氏",
+          "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+          "chapter_number": 5,
+          "segment_id": 22,
+          "candidate_index": 1,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "22:kinship:1"
+        },
+        {
+          "relation": "祖孙",
+          "person_a": "宁荣二公",
+          "person_b": "贾府子弟",
+          "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+          "chapter_number": 5,
+          "segment_id": 25,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "25:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 6,
+      "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+      "characters": {
+        "王熙凤": {
+          "age": 20,
+          "source": "observed_or_patch",
+          "age_display": "20岁"
+        },
+        "贾蓉": {
+          "age": 18,
+          "source": "observed_or_patch",
+          "age_display": "18岁"
+        },
+        "贾珠": {
+          "age": 22,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾蓉",
+            "relationship": "Age(贾蓉) - Age(贾珠) = -4",
+            "edge_source": "same_segment_present_absolute_age",
+            "segment_id": 8,
+            "context_id": "SEGMENT::8"
+          },
+          "age_display": "22岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "spouse_of",
+          "person_a": "狗儿",
+          "person_b": "刘氏",
+          "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+          "chapter_number": 6,
+          "segment_id": 29,
+          "candidate_index": 0,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "29:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 7,
+      "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "配偶",
+          "person_a": "贾珍",
+          "person_b": "尤氏",
+          "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+          "chapter_number": 7,
+          "segment_id": 39,
+          "candidate_index": 0,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "39:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 8,
+      "chapter": "第八回 比通灵金莺微露意 探宝钗黛玉半含酸",
+      "characters": {
+        "秦业": {
+          "age": 70,
+          "source": "observed_or_patch",
+          "age_display": "70岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 9,
+      "chapter": "第九回 恋风流情友入家塾 起嫌疑顽童闹学堂",
+      "characters": {
+        "贾蔷": {
+          "age": 16,
+          "source": "observed_or_patch",
+          "age_display": "16岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 10,
+      "chapter": "第十回 金寡妇贪利权受辱 张太医论病细穷源",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "配偶",
+          "person_a": "贾珍",
+          "person_b": "尤氏",
+          "chapter": "第十回 金寡妇贪利权受辱 张太医论病细穷源",
+          "chapter_number": 10,
+          "segment_id": 53,
+          "candidate_index": 0,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "53:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 11,
+      "chapter": "第十一回 庆寿辰宁府排家宴 见熙凤贾瑞起淫心",
+      "characters": {
+        "贾瑞": {
+          "age": 20,
+          "source": "observed_or_patch",
+          "age_display": "20岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 12,
+      "chapter": "第十二回 王熙凤毒设相思局 贾天祥正照风月鉴",
+      "characters": {
+        "贾瑞": {
+          "age": 21,
+          "source": "observed_or_patch",
+          "age_display": "21岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 13,
+      "chapter": "第十三回 秦可卿死封龙禁尉 王熙凤协理宁国府",
+      "characters": {
+        "贾蓉": {
+          "age": 20,
+          "source": "observed_or_patch",
+          "age_display": "20岁"
+        },
+        "贾珠": {
+          "age": 24,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾蓉",
+            "relationship": "Age(贾蓉) - Age(贾珠) = -4",
+            "edge_source": "same_segment_present_absolute_age",
+            "segment_id": 8,
+            "context_id": "SEGMENT::8"
+          },
+          "age_display": "24岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 14,
+      "chapter": "第十四回 林如海捐馆扬州城 贾宝玉路谒北静王",
+      "characters": {
+        "北静王水溶": {
+          "age": 20,
+          "source": "observed_or_patch",
+          "age_display": "20岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 16,
+      "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "准配偶",
+          "person_a": "守备之子",
+          "person_b": "张金哥",
+          "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+          "chapter_number": 16,
+          "segment_id": 85,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "85:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 17,
+      "chapter": "第十七回 大观园试才题对额 怡红院迷路探深幽",
+      "characters": {},
+      "relations": []
+    },
+    {
+      "chapter_number": 18,
+      "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+      "characters": {
+        "妙玉": {
+          "age": 18,
+          "source": "observed_or_patch",
+          "age_display": "18岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 19,
+      "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+      "characters": {
+        "袭人的姨妹": {
+          "age": 17,
+          "source": "observed_or_patch",
+          "age_display": "17岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 21,
+      "chapter": "第二十一回 贤袭人娇嗔箴宝玉 俏平儿软语救贾琏",
+      "characters": {
+        "多官之妻": {
+          "age": 20,
+          "source": "observed_or_patch",
+          "age_display": "20岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 22,
+      "chapter": "第二十二回 听曲文宝玉悟禅机 制灯迷贾政悲谶语",
+      "characters": {
+        "薛宝钗": {
+          "age": 15,
+          "source": "observed_or_patch",
+          "age_display": "15岁"
+        },
+        "小丑": {
+          "age": 9,
+          "source": "observed_or_patch",
+          "age_display": "9岁"
+        },
+        "小旦": {
+          "age": 11,
+          "source": "observed_or_patch",
+          "age_display": "11岁"
+        },
+        "薛蟠": {
+          "age": 17,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "薛宝钗",
+            "relationship": "Age(薛蟠) - Age(薛宝钗) = 2",
+            "edge_source": "explicit_relative_diff",
+            "segment_id": 21,
+            "context_id": "SEGMENT::21"
+          },
+          "age_display": "17岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 24,
+      "chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+      "characters": {
+        "贾芸": {
+          "age": 18,
+          "source": "observed_or_patch",
+          "age_display": "18岁"
+        },
+        "林红玉": {
+          "age": 16,
+          "source": "observed_or_patch",
+          "age_display": "16岁"
+        },
+        "贾宝玉": {
+          "age": 13,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾芸",
+            "relationship": "Age(贾芸) - Age(贾宝玉) = 5",
+            "edge_source": "explicit_relative_diff",
+            "segment_id": 141,
+            "context_id": "SEGMENT::141"
+          },
+          "age_display": "13岁"
+        },
+        "林黛玉": {
+          "age": 12,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾芸",
+            "relationship": "Age(林黛玉) - Age(贾芸) = -6",
+            "edge_source": "same_patch_event_present_absolute_age",
+            "segment_id": null,
+            "context_id": "PATCH::贾宝玉::EVENT::1"
+          },
+          "age_display": "12岁"
+        },
+        "袭人": {
+          "age": 15,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾芸",
+            "relationship": "Age(袭人) - Age(贾芸) = -3",
+            "edge_source": "same_patch_event_present_absolute_age",
+            "segment_id": null,
+            "context_id": "PATCH::贾宝玉::EVENT::1"
+          },
+          "age_display": "15岁"
+        },
+        "林如海": {
+          "age": 47,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾芸",
+            "relationship": "Age(林如海) - Age(贾芸) = 29",
+            "edge_source": "transitive_closure",
+            "segment_id": null,
+            "context_id": null
+          },
+          "age_display": "47岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 25,
+      "chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+      "characters": {
+        "贾宝玉": {
+          "age": 13,
+          "source": "observed_or_patch",
+          "age_display": "13岁"
+        },
+        "林黛玉": {
+          "age": 12,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾宝玉",
+            "relationship": "Age(贾宝玉) - Age(林黛玉) = 1",
+            "edge_source": "explicit_relative_diff",
+            "segment_id": 17,
+            "context_id": "SEGMENT::17"
+          },
+          "age_display": "12岁"
+        },
+        "袭人": {
+          "age": 15,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾宝玉",
+            "relationship": "Age(袭人) - Age(贾宝玉) = 2",
+            "edge_source": "explicit_relative_diff",
+            "segment_id": 29,
+            "context_id": "SEGMENT::29"
+          },
+          "age_display": "15岁"
+        },
+        "贾芸": {
+          "age": 18,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾宝玉",
+            "relationship": "Age(贾芸) - Age(贾宝玉) = 5",
+            "edge_source": "explicit_relative_diff",
+            "segment_id": 141,
+            "context_id": "SEGMENT::141"
+          },
+          "age_display": "18岁"
+        },
+        "林如海": {
+          "age": 47,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾宝玉",
+            "relationship": "Age(林如海) - Age(贾宝玉) = 34",
+            "edge_source": "transitive_closure",
+            "segment_id": null,
+            "context_id": null
+          },
+          "age_display": "47岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 26,
+      "chapter": "第二十六回 蜂腰桥设言传心事 潇湘馆春困发幽情",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "parent_of_explicit",
+          "person_a": "冯唐",
+          "person_b": "冯紫英",
+          "chapter": "第二十六回 蜂腰桥设言传心事 潇湘馆春困发幽情",
+          "chapter_number": 26,
+          "segment_id": 157,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "157:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 27,
+      "chapter": "第二十七回 滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红",
+      "characters": {
+        "林红玉": {
+          "age": 17,
+          "source": "observed_or_patch",
+          "age_display": "17岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 28,
+      "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+      "characters": {},
+      "relations": []
+    },
+    {
+      "chapter_number": 29,
+      "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+      "characters": {
+        "张道士提到的小姐": {
+          "age": 15,
+          "source": "observed_or_patch",
+          "age_display": "15岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 33,
+      "chapter": "第三十三回 手足耽耽小动唇色 不肖种种大承笞挞",
+      "characters": {
+        "王夫人": {
+          "age": 50,
+          "source": "observed_or_patch",
+          "age_display": "50岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 34,
+      "chapter": "第三十四回 情中情因情感妹妹 错里错以错劝哥哥",
+      "characters": {
+        "王夫人": {
+          "age": 50,
+          "source": "observed_or_patch",
+          "age_display": "50岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 35,
+      "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+      "characters": {
+        "傅秋芳": {
+          "age": 23,
+          "source": "observed_or_patch",
+          "age_display": "23岁"
+        },
+        "莺儿": {
+          "age": 16,
+          "source": "observed_or_patch",
+          "age_display": "16岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 39,
+      "chapter": "第三十九回 村姥姥是信口开合 情哥哥偏寻根究底",
+      "characters": {},
+      "relations": []
+    },
+    {
+      "chapter_number": 42,
+      "chapter": "第四十二回 蘅芜君兰言解疑癖 潇湘子雅谑补余香",
+      "characters": {},
+      "relations": []
+    },
+    {
+      "chapter_number": 45,
+      "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+      "characters": {
+        "赖嬷嬷之孙子（将做州县官）": {
+          "age": 30,
+          "source": "observed_or_patch",
+          "age_display": "30岁"
+        },
+        "林黛玉": {
+          "age": 15,
+          "source": "observed_or_patch",
+          "age_display": "15岁"
+        },
+        "贾宝玉": {
+          "age": 16,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "林黛玉",
+            "relationship": "Age(贾宝玉) - Age(林黛玉) = 1",
+            "edge_source": "explicit_relative_diff",
+            "segment_id": 17,
+            "context_id": "SEGMENT::17"
+          },
+          "age_display": "16岁"
+        },
+        "林如海": {
+          "age": 50,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "林黛玉",
+            "relationship": "Age(林如海) - Age(林黛玉) = 35",
+            "edge_source": "same_segment_present_absolute_age",
+            "segment_id": 7,
+            "context_id": "SEGMENT::7"
+          },
+          "age_display": "50岁"
+        },
+        "袭人": {
+          "age": 18,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "林黛玉",
+            "relationship": "Age(林黛玉) - Age(袭人) = -3",
+            "edge_source": "same_patch_event_present_absolute_age",
+            "segment_id": null,
+            "context_id": "PATCH::贾宝玉::EVENT::1"
+          },
+          "age_display": "18岁"
+        },
+        "贾芸": {
+          "age": 21,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "林黛玉",
+            "relationship": "Age(林黛玉) - Age(贾芸) = -6",
+            "edge_source": "same_patch_event_present_absolute_age",
+            "segment_id": null,
+            "context_id": "PATCH::贾宝玉::EVENT::1"
+          },
+          "age_display": "21岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 47,
+      "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+      "characters": {
+        "嫣红": {
+          "age": 17,
+          "source": "observed_or_patch",
+          "age_display": "17岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "朋友",
+          "person_a": "赖尚荣",
+          "person_b": "柳湘莲",
+          "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+          "chapter_number": 47,
+          "segment_id": 296,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "296:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 48,
+      "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "主仆",
+          "person_a": "薛姨妈",
+          "person_b": "跟随薛蟠一同前往的男子的妻子",
+          "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+          "chapter_number": 48,
+          "segment_id": 302,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "302:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 49,
+      "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "堂兄弟",
+          "person_a": "薛蟠",
+          "person_b": "薛蝌",
+          "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+          "chapter_number": 49,
+          "segment_id": 308,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "308:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 51,
+      "chapter": "第五十一回 薛小妹新编怀古诗 胡庸医乱用虎狼药",
+      "characters": {},
+      "relations": []
+    },
+    {
+      "chapter_number": 52,
+      "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+      "characters": {},
+      "relations": []
+    },
+    {
+      "chapter_number": 53,
+      "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+      "characters": {
+        "文豹": {
+          "age": 9,
+          "source": "observed_or_patch",
+          "age_display": "9岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "婆媳",
+          "person_a": "尤氏",
+          "person_b": "贾蓉之妻",
+          "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+          "chapter_number": 53,
+          "segment_id": 341,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "341:kinship:0"
+        },
+        {
+          "relation": "公媳",
+          "person_a": "贾珍",
+          "person_b": "贾蓉之妻",
+          "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+          "chapter_number": 53,
+          "segment_id": 342,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "342:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 54,
+      "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "spouse",
+          "person_a": "贾蓉",
+          "person_b": "贾蓉之妻",
+          "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+          "chapter_number": 54,
+          "segment_id": 351,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "351:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 56,
+      "chapter": "第五十六回 敏探春兴利除宿弊 识宝钗小惠全大体",
+      "characters": {
+        "甄宝玉": {
+          "age": 13,
+          "source": "observed_or_patch",
+          "age_display": "13岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 58,
+      "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "朋友/剧本里常演夫妻",
+          "person_a": "藕官",
+          "person_b": "菂官",
+          "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+          "chapter_number": 58,
+          "segment_id": 388,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "388:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 59,
+      "chapter": "第五十九回 柳叶渚边嗔莺咤燕 绛云轩里召将飞符",
+      "characters": {},
+      "relations": []
+    },
+    {
+      "chapter_number": 60,
+      "chapter": "第六十回 茉莉粉替去蔷薇硝 玖瑰露引来茯苓霜",
+      "characters": {
+        "柳家之女（五儿）": {
+          "age": 16,
+          "source": "observed_or_patch",
+          "age_display": "16岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 64,
+      "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+      "characters": {},
+      "relations": [
+        {
+          "relation": "parent",
+          "person_a": "尤老娘",
+          "person_b": "尤二姐/尤三姐",
+          "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+          "chapter_number": 64,
+          "segment_id": 438,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "438:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 68,
+      "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+      "characters": {
+        "张华": {
+          "age": 19,
+          "source": "observed_or_patch",
+          "age_display": "19岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "spouse_of",
+          "person_a": "王熙凤",
+          "person_b": "贾琏",
+          "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+          "chapter_number": 68,
+          "segment_id": 465,
+          "candidate_index": 0,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "465:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 69,
+      "chapter": "第六十九回 弄小巧用借剑杀人 觉大限吞生金自逝",
+      "characters": {
+        "秋桐": {
+          "age": 17,
+          "source": "observed_or_patch",
+          "age_display": "17岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 70,
+      "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+      "characters": {
+        "小厮": {
+          "age": 25,
+          "source": "observed_or_patch",
+          "age_display": "25岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "配偶",
+          "person_a": "王子腾之女",
+          "person_b": "保宁侯之子",
+          "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+          "chapter_number": 70,
+          "segment_id": 483,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "483:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 72,
+      "chapter": "第七十二回 王熙凤恃强羞说病 来旺妇倚势霸成亲",
+      "characters": {
+        "[旺儿家]之子": {
+          "age": 17,
+          "source": "observed_or_patch",
+          "age_display": "17岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "cousin",
+          "person_a": "司棋",
+          "person_b": "司棋的姑表兄弟",
+          "chapter": "第七十二回 王熙凤恃强羞说病 来旺妇倚势霸成亲",
+          "chapter_number": 72,
+          "segment_id": 497,
+          "candidate_index": 0,
+          "status": "overridden",
+          "reason": "修正机器误判，人工重新录入有效实体与关系",
+          "source": "04_manual",
+          "review_key": "497:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 75,
+      "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+      "characters": {
+        "服侍尤氏的小厮": {
+          "age": 15,
+          "source": "observed_or_patch",
+          "age_display": "15岁"
+        }
+      },
+      "relations": [
+        {
+          "relation": "spouse_of_explicit",
+          "person_a": "贾蓉",
+          "person_b": "贾蓉之妻",
+          "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+          "chapter_number": 75,
+          "segment_id": 523,
+          "candidate_index": 0,
+          "status": "confirmed",
+          "reason": "人工认可机器判断",
+          "source": "04_manual",
+          "review_key": "523:kinship:0"
+        }
+      ]
+    },
+    {
+      "chapter_number": 76,
+      "chapter": "第七十六回 凸碧堂品笛感凄清 凹晶馆联诗悲寂寞",
+      "characters": {
+        "尤氏": {
+          "age": 40,
+          "source": "observed_or_patch",
+          "age_display": "40岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 77,
+      "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+      "characters": {},
+      "relations": []
+    },
+    {
+      "chapter_number": 78,
+      "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+      "characters": {
+        "贾兰": {
+          "age": 13,
+          "source": "observed_or_patch",
+          "age_display": "13岁"
+        },
+        "贾环": {
+          "age": 15,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾兰",
+            "relationship": "Age(贾环) - Age(贾兰) = 2",
+            "edge_source": "explicit_relative_diff",
+            "segment_id": 553,
+            "context_id": "SEGMENT::553"
+          },
+          "age_display": "15岁"
+        },
+        "薛姨妈": {
+          "age": 48,
+          "source": "inferred_from_age_relationship",
+          "derived_from": {
+            "from_person": "贾兰",
+            "relationship": "Age(贾兰) - Age(薛姨妈) = -35",
+            "edge_source": "same_segment_present_absolute_age",
+            "segment_id": 21,
+            "context_id": "SEGMENT::21"
+          },
+          "age_display": "48岁"
+        }
+      },
+      "relations": []
+    },
+    {
+      "chapter_number": 79,
+      "chapter": "第七十九回 薛文龙悔娶河东狮 贾迎春误嫁中山狼",
+      "characters": {
+        "夏金桂": {
+          "age": 17,
+          "source": "observed_or_patch",
+          "age_display": "17岁"
+        }
+      },
+      "relations": []
+    }
+  ],
+  "non_main_timeline_age_records": [
+    {
+      "subject": "林如海之子",
+      "age": 3,
+      "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "segment_id": 7,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "7:age:0",
+      "matched_text": "三岁",
+      "sentence": "今如海年已四十，只有一个三岁之子，偏又于去岁死了"
+    },
+    {
+      "subject": "贾珠",
+      "age": 14,
+      "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "segment_id": 8,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "8:age:1",
+      "matched_text": "十四岁",
+      "sentence": "这政老爹的夫人王氏， 头胎生的公子，名唤贾珠，十四岁进学，不到二十岁就娶了妻生了子， 一病死了"
+    },
+    {
+      "subject": "林黛玉之父",
+      "age": 50,
+      "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+      "segment_id": 12,
+      "temporal_anchor": "FUTURE",
+      "clue_type": "absolute",
+      "source_key": "12:age:0",
+      "matched_text": "半百",
+      "sentence": "那女学生黛玉，身体方愈，原不忍弃父而往，无奈他外祖母致意务去，且兼如海说：“汝父年将半百，再无续室之意，且汝多病，年又极小，上无亲母教养，下无姊妹兄弟扶持， 今依傍外祖母及舅氏姊妹去，正好减我顾盼之忧，何反云不往"
+    },
+    {
+      "subject": "林黛玉",
+      "age": 3,
+      "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+      "segment_id": 14,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "14:age:0",
+      "matched_text": "三岁",
+      "sentence": "那一年我三岁时，听得说 来了一个癞头和尚， 说要化我去出家，我父母固是不从"
+    },
+    {
+      "subject": "香菱",
+      "age": 5,
+      "chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "segment_id": 21,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "21:age:1",
+      "matched_text": "五岁",
+      "sentence": "闻得养至五岁被人拐去，却如今才来卖呢"
+    },
+    {
+      "subject": "薛蟠",
+      "age": 5,
+      "chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "segment_id": 21,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "21:age:2",
+      "matched_text": "五岁",
+      "sentence": "这薛公子学名薛蟠，表字文龙，五岁上就性情奢侈，言语傲慢"
+    },
+    {
+      "subject": "茗玉",
+      "age": 17,
+      "chapter": "第三十九回 村姥姥是信口开合 情哥哥偏寻根究底",
+      "segment_id": 247,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "247:age:0",
+      "matched_text": "十七岁",
+      "sentence": "可惜这茗玉小姐生到十七岁，一病死了"
+    },
+    {
+      "subject": "薛宝钗",
+      "age": 8,
+      "chapter": "第四十二回 蘅芜君兰言解疑癖 潇湘子雅谑补余香",
+      "segment_id": 259,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "259:age:0",
+      "matched_text": "八岁",
+      "sentence": "从小七八岁上也够个人缠的"
+    },
+    {
+      "subject": "赖嬷嬷之孙子（将做州县官）",
+      "age": 20,
+      "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+      "segment_id": 280,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "280:age:1",
+      "matched_text": "二十岁",
+      "sentence": "到二十岁上，又蒙主子的恩典，许你捐个前程在身上"
+    },
+    {
+      "subject": "薛宝琴",
+      "age": 8,
+      "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+      "segment_id": 334,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "334:age:0",
+      "matched_text": "八岁",
+      "sentence": "我八岁时节，跟我父亲到西海沿子上买洋货，谁知有个真真国的女孩子，才十五岁，那脸面就和那西洋画上的美人一样，也披着黄头发，打着联垂，满头带的都是珊瑚、猫儿眼、祖母绿这些宝石，身上穿着金丝织的锁子甲洋锦袄袖，带着倭刀，也是镶金嵌宝的，实在画儿上的也没他好看"
+    },
+    {
+      "subject": "真真国女子",
+      "age": 15,
+      "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+      "segment_id": 334,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "334:age:1",
+      "matched_text": "才十五岁",
+      "sentence": "我八岁时节，跟我父亲到西海沿子上买洋货，谁知有个真真国的女孩子，才十五岁，那脸面就和那西洋画上的美人一样，也披着黄头发，打着联垂，满头带的都是珊瑚、猫儿眼、祖母绿这些宝石，身上穿着金丝织的锁子甲洋锦袄袖，带着倭刀，也是镶金嵌宝的，实在画儿上的也没他好看"
+    },
+    {
+      "subject": "慧娘",
+      "age": 18,
+      "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+      "segment_id": 346,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "346:age:0",
+      "matched_text": "十八岁",
+      "sentence": "偏这慧娘命夭，十八岁便死了，如今竟不能再得一件的了"
+    },
+    {
+      "subject": "晴雯",
+      "age": 10,
+      "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+      "segment_id": 543,
+      "temporal_anchor": "PAST",
+      "clue_type": "absolute",
+      "source_key": "543:age:0",
+      "matched_text": "十岁",
+      "sentence": "这晴雯当日系赖大家用银子买的，那时晴雯才得十岁，尚未留头"
+    }
+  ],
+  "node_time": {
+    "PATCH::香菱::EVENT::2": 9,
+    "SEGMENT::296": null,
+    "PATCH::贾宝玉::EVENT::1": 0,
+    "PATCH::贾瑞::EVENT::0": 0,
+    "SEGMENT::148": 0,
+    "SEGMENT::370": null,
+    "PATCH::贾蓉::EVENT::1": 2,
+    "PATCH::香菱::EVENT::3": 10,
+    "SEGMENT::111": null,
+    "SEGMENT::219": null,
+    "SEGMENT::400": null,
+    "SEGMENT::141": null,
+    "SEGMENT::7": 0,
+    "SEGMENT::78": null,
+    "SEGMENT::8": 0,
+    "SEGMENT::221": null,
+    "PATCH::贾宝玉::EVENT::0": 0,
+    "SEGMENT::100": null,
+    "SEGMENT::47": null,
+    "SEGMENT::524": null,
+    "PATCH::香菱::EVENT::1": 2,
+    "SEGMENT::51": null,
+    "SEGMENT::126": null,
+    "SEGMENT::559": null,
+    "SEGMENT::32": null,
+    "SEGMENT::530": null,
+    "SEGMENT::348": null,
+    "SEGMENT::161": 1,
+    "PATCH::贾瑞::EVENT::1": 1,
+    "SEGMENT::177": null,
+    "SEGMENT::481": null,
+    "SEGMENT::475": null,
+    "SEGMENT::553": 8,
+    "SEGMENT::21": 0,
+    "SEGMENT::282": 10,
+    "SEGMENT::19": null,
+    "SEGMENT::71": 4,
+    "SEGMENT::500": null,
+    "SEGMENT::209": 0,
+    "SEGMENT::155": 6,
+    "SEGMENT::467": null,
+    "SEGMENT::128": null,
+    "SEGMENT::5": 0,
+    "SEGMENT::204": 0,
+    "SEGMENT::124": null,
+    "SEGMENT::280": null
+  },
+  "time_constraints": [
+    {
+      "type": "character_age_growth",
+      "from_node": "SEGMENT::5",
+      "to_node": "PATCH::香菱::EVENT::1",
+      "span_years": 2,
+      "subject": "香菱",
+      "from_chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+      "to_chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+      "from_segment": 5,
+      "to_segment": null,
+      "from_context": "SEGMENT::5",
+      "to_context": "PATCH::香菱::EVENT::1",
+      "evidence": [
+        "5:age:0"
+      ]
+    },
+    {
+      "type": "character_age_growth",
+      "from_node": "PATCH::香菱::EVENT::1",
+      "to_node": "PATCH::香菱::EVENT::2",
+      "span_years": 7,
+      "subject": "香菱",
+      "from_chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+      "to_chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "from_segment": null,
+      "to_segment": null,
+      "from_context": "PATCH::香菱::EVENT::1",
+      "to_context": "PATCH::香菱::EVENT::2",
+      "evidence": []
+    },
+    {
+      "type": "character_age_growth",
+      "from_node": "PATCH::香菱::EVENT::2",
+      "to_node": "PATCH::香菱::EVENT::3",
+      "span_years": 1,
+      "subject": "香菱",
+      "from_chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "to_chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "from_segment": null,
+      "to_segment": null,
+      "from_context": "PATCH::香菱::EVENT::2",
+      "to_context": "PATCH::香菱::EVENT::3",
+      "evidence": []
+    },
+    {
+      "type": "character_age_growth",
+      "from_node": "SEGMENT::7",
+      "to_node": "SEGMENT::282",
+      "span_years": 10,
+      "subject": "林黛玉",
+      "from_chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "to_chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+      "from_segment": 7,
+      "to_segment": 282,
+      "from_context": "SEGMENT::7",
+      "to_context": "SEGMENT::282",
+      "evidence": [
+        "7:age:2",
+        "282:age:0"
+      ]
+    },
+    {
+      "type": "character_age_growth",
+      "from_node": "SEGMENT::8",
+      "to_node": "PATCH::贾蓉::EVENT::1",
+      "span_years": 2,
+      "subject": "贾蓉",
+      "from_chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "to_chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+      "from_segment": 8,
+      "to_segment": null,
+      "from_context": "SEGMENT::8",
+      "to_context": "PATCH::贾蓉::EVENT::1",
+      "evidence": [
+        "8:age:0"
+      ]
+    },
+    {
+      "type": "character_age_growth",
+      "from_node": "PATCH::贾蓉::EVENT::1",
+      "to_node": "SEGMENT::71",
+      "span_years": 2,
+      "subject": "贾蓉",
+      "from_chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+      "to_chapter": "第十三回 秦可卿死封龙禁尉 王熙凤协理宁国府",
+      "from_segment": null,
+      "to_segment": 71,
+      "from_context": "PATCH::贾蓉::EVENT::1",
+      "to_context": "SEGMENT::71",
+      "evidence": [
+        "71:age:0"
+      ]
+    },
+    {
+      "type": "character_age_growth",
+      "from_node": "SEGMENT::21",
+      "to_node": "SEGMENT::553",
+      "span_years": 8,
+      "subject": "贾兰",
+      "from_chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "to_chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+      "from_segment": 21,
+      "to_segment": 553,
+      "from_context": "SEGMENT::21",
+      "to_context": "SEGMENT::553",
+      "evidence": [
+        "21:age:0",
+        "553:age:0"
+      ]
+    },
+    {
+      "type": "character_age_growth",
+      "from_node": "SEGMENT::148",
+      "to_node": "SEGMENT::161",
+      "span_years": 1,
+      "subject": "林红玉",
+      "from_chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+      "to_chapter": "第二十七回 滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红",
+      "from_segment": 148,
+      "to_segment": 161,
+      "from_context": "SEGMENT::148",
+      "to_context": "SEGMENT::161",
+      "evidence": [
+        "148:age:0",
+        "161:age:0"
+      ]
+    },
+    {
+      "type": "character_age_growth",
+      "from_node": "PATCH::贾宝玉::EVENT::1",
+      "to_node": "SEGMENT::155",
+      "span_years": 6,
+      "subject": "贾宝玉",
+      "from_chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "to_chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+      "from_segment": null,
+      "to_segment": 155,
+      "from_context": "PATCH::贾宝玉::EVENT::1",
+      "to_context": "SEGMENT::155",
+      "evidence": [
+        "155:age:0"
+      ]
+    },
+    {
+      "type": "character_age_growth",
+      "from_node": "SEGMENT::204",
+      "to_node": "SEGMENT::209",
+      "span_years": 0,
+      "subject": "王夫人",
+      "from_chapter": "第三十三回 手足耽耽小动唇色 不肖种种大承笞挞",
+      "to_chapter": "第三十四回 情中情因情感妹妹 错里错以错劝哥哥",
+      "from_segment": 204,
+      "to_segment": 209,
+      "from_context": "SEGMENT::204",
+      "to_context": "SEGMENT::209",
+      "evidence": [
+        "204:age:0",
+        "209:age:0"
+      ]
+    },
+    {
+      "type": "time_patch_event",
+      "from_node": "SEGMENT::5",
+      "to_node": "PATCH::香菱::EVENT::1",
+      "span_years": 2,
+      "subject": "香菱",
+      "from_chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+      "to_chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+      "patch_index": 0,
+      "event": "5岁元宵节被拐（根据第四回追叙）"
+    },
+    {
+      "type": "time_patch_event",
+      "from_node": "PATCH::香菱::EVENT::1",
+      "to_node": "PATCH::香菱::EVENT::2",
+      "span_years": 7,
+      "subject": "香菱",
+      "from_chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+      "to_chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "patch_index": 1,
+      "event": "12岁被卖给冯渊和薛蟠，冯渊被打死，家奴告状"
+    },
+    {
+      "type": "time_patch_event",
+      "from_node": "PATCH::香菱::EVENT::2",
+      "to_node": "PATCH::香菱::EVENT::3",
+      "span_years": 1,
+      "subject": "香菱",
+      "from_chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "to_chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+      "patch_index": 2,
+      "event": "13岁 贾雨村接手冯渊案并结案"
+    },
+    {
+      "type": "time_patch_event",
+      "from_node": "SEGMENT::8",
+      "to_node": "PATCH::贾蓉::EVENT::1",
+      "span_years": 2,
+      "subject": "贾蓉",
+      "from_chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "to_chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+      "patch_index": 3,
+      "event": "18岁 刘姥姥一进荣国府见到王熙凤的时候贾蓉十七八岁"
+    },
+    {
+      "type": "time_patch_event",
+      "from_node": "PATCH::贾宝玉::EVENT::0",
+      "to_node": "PATCH::贾宝玉::EVENT::1",
+      "span_years": 0,
+      "subject": "贾宝玉",
+      "from_chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "to_chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "patch_index": 4,
+      "event": "7岁 冷子兴告诉贾雨村贾宝玉的年龄约七八岁，说明林黛玉应该5岁多快6岁了"
+    },
+    {
+      "type": "time_patch_event",
+      "from_node": "PATCH::贾瑞::EVENT::0",
+      "to_node": "PATCH::贾瑞::EVENT::1",
+      "span_years": 1,
+      "subject": "贾瑞",
+      "from_chapter": "第十一回 庆寿辰宁府排家宴 见熙凤贾瑞起淫心",
+      "to_chapter": "第十二回 王熙凤毒设相思局 贾天祥正照风月鉴",
+      "patch_index": 5,
+      "event": "贾敬过生日，秦可卿病重，贾瑞见到王熙凤，十一月三十日贾瑞主动找王熙凤，王熙凤设相思局让贾瑞受惊吓着凉导致生病，贾瑞20岁生病1年后死亡，不久后秦可卿死亡"
+    },
+    {
+      "type": "patch_clean_alignment",
+      "from_node": "SEGMENT::5",
+      "to_node": "SEGMENT::5",
+      "span_years": 0,
+      "subject": "香菱",
+      "from_chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+      "to_chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+      "from_segment": 5,
+      "patch_index": null
+    },
+    {
+      "type": "patch_clean_alignment",
+      "from_node": "SEGMENT::8",
+      "to_node": "SEGMENT::8",
+      "span_years": 0,
+      "subject": "贾蓉",
+      "from_chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "to_chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+      "from_segment": 8,
+      "patch_index": null
+    }
+  ],
+  "components": [
+    {
+      "anchor_node": "SEGMENT::5",
+      "nodes": [
+        "SEGMENT::5",
+        "PATCH::香菱::EVENT::1",
+        "PATCH::香菱::EVENT::2",
+        "PATCH::香菱::EVENT::3"
+      ],
+      "relative_years": {
+        "SEGMENT::5": 0,
+        "PATCH::香菱::EVENT::1": 2,
+        "PATCH::香菱::EVENT::2": 9,
+        "PATCH::香菱::EVENT::3": 10
+      }
+    },
+    {
+      "anchor_node": "SEGMENT::7",
+      "nodes": [
+        "SEGMENT::7",
+        "SEGMENT::282"
+      ],
+      "relative_years": {
+        "SEGMENT::7": 0,
+        "SEGMENT::282": 10
+      }
+    },
+    {
+      "anchor_node": "SEGMENT::8",
+      "nodes": [
+        "SEGMENT::8",
+        "PATCH::贾蓉::EVENT::1",
+        "SEGMENT::71"
+      ],
+      "relative_years": {
+        "SEGMENT::8": 0,
+        "PATCH::贾蓉::EVENT::1": 2,
+        "SEGMENT::71": 4
+      }
+    },
+    {
+      "anchor_node": "PATCH::贾宝玉::EVENT::0",
+      "nodes": [
+        "PATCH::贾宝玉::EVENT::0",
+        "PATCH::贾宝玉::EVENT::1",
+        "SEGMENT::155"
+      ],
+      "relative_years": {
+        "PATCH::贾宝玉::EVENT::0": 0,
+        "PATCH::贾宝玉::EVENT::1": 0,
+        "SEGMENT::155": 6
+      }
+    },
+    {
+      "anchor_node": "SEGMENT::21",
+      "nodes": [
+        "SEGMENT::21",
+        "SEGMENT::553"
+      ],
+      "relative_years": {
+        "SEGMENT::21": 0,
+        "SEGMENT::553": 8
+      }
+    },
+    {
+      "anchor_node": "PATCH::贾瑞::EVENT::0",
+      "nodes": [
+        "PATCH::贾瑞::EVENT::0",
+        "PATCH::贾瑞::EVENT::1"
+      ],
+      "relative_years": {
+        "PATCH::贾瑞::EVENT::0": 0,
+        "PATCH::贾瑞::EVENT::1": 1
+      }
+    },
+    {
+      "anchor_node": "SEGMENT::148",
+      "nodes": [
+        "SEGMENT::148",
+        "SEGMENT::161"
+      ],
+      "relative_years": {
+        "SEGMENT::148": 0,
+        "SEGMENT::161": 1
+      }
+    },
+    {
+      "anchor_node": "SEGMENT::204",
+      "nodes": [
+        "SEGMENT::204",
+        "SEGMENT::209"
+      ],
+      "relative_years": {
+        "SEGMENT::204": 0,
+        "SEGMENT::209": 0
+      }
+    }
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,829 @@
+[
+  {
+    "segment_id": 5,
+    "chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+    "kinship_candidates": [
+      {
+        "sentence": "嫡妻封 氏，情性贤淑，深明礼义",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "封 氏"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true
+      },
+      {
+        "sentence": "只是一件不足：如今年已半百，膝下无儿， 只有一女，乳名英莲， 年方三岁",
+        "pattern_desc": "XX的女儿/儿子，乳名YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "只有一",
+          "英莲"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "香菱"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 6,
+    "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+    "kinship_candidates": [
+      {
+        "sentence": "谁想他命运两济， 不承望自到雨村身边，只一年便生了一子，又半载，雨村嫡妻忽染疾下世，雨村便将他扶册作正室夫人了",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "忽染疾下"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾雨村"
+        ],
+        "confidence": "implicit_subject",
+        "needs_llm_review": true
+      },
+      {
+        "sentence": "谁想他命运两济， 不承望自到雨村身边，只一年便生了一子，又半载，雨村嫡妻忽染疾下世，雨村便将他扶册作正室夫人了",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "夫人了"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾雨村"
+        ],
+        "confidence": "implicit_subject",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 7,
+    "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+    "kinship_candidates": [
+      {
+        "sentence": "今只有嫡妻贾氏，生得一女，乳名黛玉，年方五岁",
+        "pattern_desc": "生子/生女，乳名XX",
+        "relation_type_hint": "parent_of",
+        "regex_groups": [
+          "黛玉"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾敏",
+          "林黛玉"
+        ],
+        "confidence": "implicit_subject",
+        "needs_llm_review": true
+      },
+      {
+        "sentence": "今只有嫡妻贾氏，生得一女，乳名黛玉，年方五岁",
+        "pattern_desc": "XX的女儿/儿子，乳名YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "生得一",
+          "黛玉"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾敏",
+          "林黛玉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false
+      },
+      {
+        "sentence": "今只有嫡妻贾氏，生得一女，乳名黛玉，年方五岁",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "贾氏"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾敏",
+          "林黛玉"
+        ],
+        "confidence": "implicit_subject",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 8,
+    "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+    "kinship_candidates": [
+      {
+        "sentence": "这政老爹的夫人王氏， 头胎生的公子，名唤贾珠，十四岁进学，不到二十岁就娶了妻生了子， 一病死了",
+        "pattern_desc": "头胎公子",
+        "relation_type_hint": "parent_of",
+        "regex_groups": [
+          "贾珠"
+        ],
+        "raw_subject_phrase": "政老爹的夫人",
+        "candidate_characters_in_sentence": [
+          "贾政",
+          "贾珠"
+        ],
+        "confidence": "implicit_subject",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 14,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "kinship_candidates": [
+      {
+        "sentence": "”黛玉虽不识，也曾听见母亲说过，大舅贾赦之子贾琏，娶的就是二舅母王氏之内侄女，自幼假充男儿教养的，学名王熙凤",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "大舅贾赦",
+          "贾琏"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "林黛玉",
+          "贾赦",
+          "贾琏",
+          "王熙凤"
+        ],
+        "confidence": "multiple_characters_ambiguous",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 15,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "kinship_candidates": [
+      {
+        "sentence": "时贾赦之妻邢氏忙亦起身，笑回道：“我带了外甥女过去，倒也便宜",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "时贾赦",
+          "邢氏忙亦"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾赦"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 16,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "kinship_candidates": [
+      {
+        "sentence": "原来王夫人时常居坐宴息，亦不在这正室， 只在这正室东边的三间耳房内",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "东边的三"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "王夫人"
+        ],
+        "confidence": "implicit_subject",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 17,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "kinship_candidates": [
+      {
+        "sentence": "况我来了，自然只和姊妹同处，兄弟们自是别院另室的， 岂得去沾惹之理",
+        "pattern_desc": "XX与YY是姊弟/兄妹",
+        "relation_type_hint": "siblings",
+        "regex_groups": [
+          "自然只",
+          "姊妹同处",
+          "兄弟"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true
+      },
+      {
+        "sentence": "贾珠之妻李氏捧饭，熙凤安箸，王夫人进羹",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "贾珠",
+          "李氏捧饭"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾珠",
+          "李纨",
+          "王熙凤",
+          "王夫人"
+        ],
+        "confidence": "multiple_characters_ambiguous",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 20,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "kinship_candidates": [
+      {
+        "sentence": "黛玉虽不知原委，探春等却都晓得是议论金陵城中所居的薛家姨母之子姨表兄薛蟠，倚财仗势，打死人命，现在应天府案下审理",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "薛家姨母",
+          "姨表兄薛"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "林黛玉",
+          "贾探春",
+          "薛蟠"
+        ],
+        "confidence": "multiple_characters_ambiguous",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 22,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "kinship_candidates": [
+      {
+        "sentence": "因东边宁府中花园内梅花盛开， 贾珍之妻尤氏乃治酒，请贾母、邢夫人、王夫人等赏花",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "贾珍",
+          "尤氏乃治"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾珍",
+          "尤氏",
+          "贾母",
+          "王夫人"
+        ],
+        "confidence": "multiple_characters_ambiguous",
+        "needs_llm_review": false
+      },
+      {
+        "sentence": "贾蓉之妻秦氏便忙笑回道：“我们这里有给宝叔收拾下的屋子，老祖宗放心，只管交与我就是了",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "贾蓉",
+          "秦氏便忙"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾蓉",
+          "秦可卿",
+          "贾母"
+        ],
+        "confidence": "multiple_characters_ambiguous",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 23,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "kinship_candidates": [
+      {
+        "sentence": "司人间之风情月债，掌尘世之女怨男痴",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "掌尘世",
+          "怨男痴"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 25,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "kinship_candidates": [
+      {
+        "sentence": "故遗之子孙虽多，竟无可以继业",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "故遗",
+          "孙虽多"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 29,
+    "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+    "kinship_candidates": [
+      {
+        "sentence": "狗儿亦生一子，小名板儿，嫡妻刘氏，又生一女，名唤青儿",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "刘氏"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 39,
+    "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+    "kinship_candidates": [
+      {
+        "sentence": "早有贾珍之妻尤氏与贾蓉之妻秦氏婆媳两个，引了多少姬妾丫鬟媳妇等接出仪门",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "早有贾珍",
+          "尤氏与贾"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾珍",
+          "尤氏",
+          "贾蓉",
+          "秦可卿"
+        ],
+        "confidence": "multiple_characters_ambiguous",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 40,
+    "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+    "kinship_candidates": [
+      {
+        "sentence": "家祖母因说：一则家学里之子弟太多，生恐大家淘气，反不好，二则也因我病了几天，遂暂且耽搁着",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "则家学里",
+          "弟太多"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 53,
+    "chapter": "第十回 金寡妇贪利权受辱 张太医论病细穷源",
+    "kinship_candidates": [
+      {
+        "sentence": "到了宁府，进了车门，到了东边小角门前下了车，进去见了贾珍之妻尤氏",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "见了贾珍",
+          "尤氏"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾珍",
+          "尤氏"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 85,
+    "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+    "kinship_candidates": [
+      {
+        "sentence": "那守备之子闻得金哥自缢，他也是个极多情的，遂也投河而死，不负妻义",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "那守备",
+          "闻得金哥"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "张金哥"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 157,
+    "chapter": "第二十六回 蜂腰桥设言传心事 潇湘馆春困发幽情",
+    "kinship_candidates": [
+      {
+        "sentence": "”宝玉便知是神武将军冯唐之子冯紫英来了",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "将军冯唐",
+          "冯紫英来"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾宝玉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 296,
+    "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+    "kinship_candidates": [
+      {
+        "sentence": "那赖大之子赖尚荣与他素习交好，故他今日请来作陪",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "那赖大",
+          "赖尚荣与"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "赖大"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 302,
+    "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+    "kinship_candidates": [
+      {
+        "sentence": "因此薛姨妈即日到书房，将一应陈设玩器并帘幔等物尽行搬了进来收贮，命那两个跟去的男子之妻一并也进来睡觉",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "男子",
+          "一并也进"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 308,
+    "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+    "kinship_candidates": [
+      {
+        "sentence": "后有薛蟠之从弟薛蝌，因当年父亲在京时已将胞妹薛宝琴许配都中梅翰林之子为婚， 正欲进京发嫁，闻得王仁进京，他也带了妹子随后赶来",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "中梅翰林",
+          "为婚"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "薛蟠",
+          "薛蝌",
+          "薛宝琴",
+          "王仁"
+        ],
+        "confidence": "multiple_characters_ambiguous",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 341,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "kinship_candidates": [
+      {
+        "sentence": "这日宁府中尤氏正起来同贾蓉之妻打点送贾母这边针线礼物，正值丫头捧了一茶盘押岁锞子进来，回说：“兴儿回奶奶，前儿那一包碎金子共是一百五十三两六钱七分，里头成色不等，共总倾了二百二十个锞子",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "来同贾蓉",
+          "打点送贾"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "尤氏",
+          "贾蓉",
+          "贾母"
+        ],
+        "confidence": "multiple_characters_ambiguous",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 342,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "kinship_candidates": [
+      {
+        "sentence": "一时贾珍进来吃饭，贾蓉之妻回避了",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "贾蓉",
+          "回避了"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾珍",
+          "贾蓉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 346,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "kinship_candidates": [
+      {
+        "sentence": "众人围随同至贾母正室之中，亦是锦裀绣屏，焕然一新",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "之中"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾母"
+        ],
+        "confidence": "implicit_subject",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 347,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "kinship_candidates": [
+      {
+        "sentence": "当又有林之孝之妻带了六个媳妇，抬了三张炕桌，每一张上搭着一条红毡，毡上放着选净一般大新出局的铜钱，用大红彩绳串着",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "有林之孝",
+          "带了六个"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "林之孝"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 351,
+    "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+    "kinship_candidates": [
+      {
+        "sentence": "”然后宝玉将里面斟完，只除贾蓉之妻是丫头们斟的",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "只除贾蓉",
+          "是丫头们"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾宝玉",
+          "贾蓉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 388,
+    "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+    "kinship_candidates": [
+      {
+        "sentence": "比如男子丧了妻，或有必当续弦者，也必要续弦为是",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "为是"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 390,
+    "chapter": "第五十九回 柳叶渚边嗔莺咤燕 绛云轩里召将飞符",
+    "kinship_candidates": [
+      {
+        "sentence": "每日林之孝之妻进来，带领十来个婆子上夜，穿堂内又添了许多小厮们坐更打梆子，已安插得十分妥当",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "日林之孝",
+          "进来"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "林之孝"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 438,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "kinship_candidates": [
+      {
+        "sentence": "此时出殡以后，贾珍家下人少，除尤老娘带领二姐、三姐并几个粗使的丫鬟、老婆子在正室居住外，其余婢妾，都随在寺中",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "居住外"
+        ],
+        "raw_subject_phrase": "粗使的丫鬟",
+        "candidate_characters_in_sentence": [
+          "贾珍",
+          "尤老娘",
+          "尤二姐",
+          "尤三姐"
+        ],
+        "confidence": "implicit_subject",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 465,
+    "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+    "kinship_candidates": [
+      {
+        "sentence": "谁知凤姐心下早已算定，只待贾琏前脚走了，回来便传各色匠役，收拾东厢房三间，照依自己正室一样装饰陈设",
+        "pattern_desc": "嫡妻/续弦XX（配偶方需靠上下文补全）",
+        "relation_type_hint": "spouse_of",
+        "regex_groups": [
+          "一样装饰"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "王熙凤",
+          "贾琏"
+        ],
+        "confidence": "implicit_subject",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 483,
+    "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+    "kinship_candidates": [
+      {
+        "sentence": "偏生近日王子腾之女许与保宁侯之子为妻，择日于五月初十日过门，凤姐儿又忙着张罗，常三五日不在家",
+        "pattern_desc": "XX之女/之子YY",
+        "relation_type_hint": "parent_of_explicit",
+        "regex_groups": [
+          "日王子腾",
+          "许与保宁"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "王子腾",
+          "王熙凤"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false
+      }
+    ]
+  },
+  {
+    "segment_id": 497,
+    "chapter": "第七十二回 王熙凤恃强羞说病 来旺妇倚势霸成亲",
+    "kinship_candidates": [
+      {
+        "sentence": "原来那司棋因从小儿和他姑表兄弟在一处顽笑起住时，小儿戏言，便都订下将来不娶不嫁",
+        "pattern_desc": "XX与YY是姊弟/兄妹",
+        "relation_type_hint": "siblings",
+        "regex_groups": [
+          "司棋因从小儿",
+          "他姑表",
+          "兄弟"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "司棋"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 523,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "kinship_candidates": [
+      {
+        "sentence": "贾蓉之妻带领家下媳妇丫头们，也都秉烛接了出来",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "贾蓉",
+          "带领家下"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾蓉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      }
+    ]
+  },
+  {
+    "segment_id": 525,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "kinship_candidates": [
+      {
+        "sentence": "”说话之间，贾蓉之妻也梳妆了来见过",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "贾蓉",
+          "也梳妆了"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "贾蓉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true
+      },
+      {
+        "sentence": "少时摆上饭来，尤氏在上，贾蓉之妻在下相陪，婆媳二人吃毕饭",
+        "pattern_desc": "XX之妻YY",
+        "relation_type_hint": "spouse_of_explicit",
+        "regex_groups": [
+          "贾蓉",
+          "在下相陪"
+        ],
+        "raw_subject_phrase": null,
+        "candidate_characters_in_sentence": [
+          "尤氏",
+          "贾蓉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false
+      }
+    ]
+  }
+]

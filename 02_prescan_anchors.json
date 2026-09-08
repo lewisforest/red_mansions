@@ -1,0 +1,5196 @@
+[
+  {
+    "segment_id": 1,
+    "chapter": "甲戌本凡例",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 2,
+    "chapter": "甲戌本凡例",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 3,
+    "chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+    "age_candidates": [
+      {
+        "clue_type": "idiom_age",
+        "sentence": "望乞明示，使弟子不惑",
+        "stated_age": 40,
+        "matched_text": "不惑",
+        "bound_type": "exact",
+        "is_idiom_age": true,
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 4,
+    "chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 5,
+    "chapter": "第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "只是一件不足：如今年已半百，膝下无儿， 只有一女，乳名英莲， 年方三岁",
+        "stated_age": 3,
+        "matched_text": "年方三岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "香菱"
+        ],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "idiom_age",
+        "sentence": "只是一件不足：如今年已半百，膝下无儿， 只有一女，乳名英莲， 年方三岁",
+        "stated_age": 50,
+        "matched_text": "半百",
+        "bound_type": "exact",
+        "is_idiom_age": true,
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "香菱"
+        ],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "元宵",
+        "season": "冬"
+      },
+      {
+        "keyword": "中秋",
+        "season": "秋"
+      },
+      {
+        "keyword": "清明",
+        "season": "春"
+      }
+    ]
+  },
+  {
+    "segment_id": 6,
+    "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 7,
+    "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "今如海年已四十，只有一个三岁之子，偏又于去岁死了",
+        "stated_age": 3,
+        "matched_text": "三岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "林如海"
+        ],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": true,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "no_sui_idiom",
+        "sentence": "今如海年已四十，只有一个三岁之子，偏又于去岁死了",
+        "stated_age": 40,
+        "matched_text": "年已四十",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "林如海"
+        ],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": true,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "今只有嫡妻贾氏，生得一女，乳名黛玉，年方五岁",
+        "stated_age": 5,
+        "matched_text": "年方五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "林黛玉",
+          "贾敏"
+        ],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 8,
+    "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "这位珍爷倒生了一个儿子，今年才十六岁，名叫贾蓉",
+        "stated_age": 16,
+        "matched_text": "才十六岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾蓉",
+          "贾珍"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "这政老爹的夫人王氏， 头胎生的公子，名唤贾珠，十四岁进学，不到二十岁就娶了妻生了子， 一病死了",
+        "stated_age": 14,
+        "matched_text": "十四岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾珠",
+          "贾政"
+        ],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": true
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "这政老爹的夫人王氏， 头胎生的公子，名唤贾珠，十四岁进学，不到二十岁就娶了妻生了子， 一病死了",
+        "stated_age": 20,
+        "matched_text": "二十岁",
+        "bound_type": "less_than",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾珠",
+          "贾政"
+        ],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": true
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 9,
+    "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "清明",
+        "season": "春"
+      }
+    ]
+  },
+  {
+    "segment_id": 10,
+    "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 11,
+    "chapter": "第二回 贾夫人仙逝扬州城 冷子兴演说荣国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 12,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "age_candidates": [
+      {
+        "clue_type": "idiom_age",
+        "sentence": "那女学生黛玉，身体方愈，原不忍弃父而往，无奈他外祖母致意务去，且兼如海说：“汝父年将半百，再无续室之意，且汝多病，年又极小，上无亲母教养，下无姊妹兄弟扶持， 今依傍外祖母及舅氏姊妹去，正好减我顾盼之忧，何反云不往",
+        "stated_age": 50,
+        "matched_text": "半百",
+        "bound_type": "exact",
+        "is_idiom_age": true,
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "林如海",
+          "林黛玉"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 13,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 14,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "那一年我三岁时，听得说 来了一个癞头和尚， 说要化我去出家，我父母固是不从",
+        "stated_age": 3,
+        "matched_text": "三岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 15,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 16,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 17,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "age_candidates": [
+      {
+        "clue_type": "idiom_age",
+        "sentence": "”这院门上也有 四五个才总角的小厮，都垂手侍立",
+        "stated_age": 8,
+        "matched_text": "总角",
+        "bound_type": "about",
+        "is_idiom_age": true,
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [
+      {
+        "clue_type": "comparative",
+        "type": "comparative",
+        "sentence": "在家时亦曾听见母亲常说，这位哥哥比我大一岁，小名就唤宝玉， 虽 极憨顽，说在姊妹情中极好的",
+        "matched_text": "这位哥哥比我大一岁",
+        "raw_target_phrase": "这位哥哥比我",
+        "direction": "大",
+        "age_diff": 1,
+        "candidate_characters_in_sentence": [
+          "贾宝玉"
+        ],
+        "needs_llm_review": true
+      }
+    ],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 18,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "中秋",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 19,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "黛玉只带了两个人来：一个是自幼奶娘王嬷嬷，一个是十岁的小丫头，亦是自幼随身的，名唤作雪雁",
+        "stated_age": 10,
+        "matched_text": "十岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "雪雁",
+          "林黛玉"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 20,
+    "chapter": "第三回\t托内兄如海酬训教 接外孙贾母惜孤女",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 21,
+    "chapter": "第四回 薄命女偏逢薄命郎 葫芦僧乱判葫芦案",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "珠虽夭亡，幸存一子，取名贾兰，今方五岁，已入学攻书",
+        "stated_age": 5,
+        "matched_text": "方五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾兰"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": true
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "闻得养至五岁被人拐去，却如今才来卖呢",
+        "stated_age": 5,
+        "matched_text": "五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "这薛公子学名薛蟠，表字文龙，五岁上就性情奢侈，言语傲慢",
+        "stated_age": 5,
+        "matched_text": "五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "薛蟠"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "no_sui_idiom",
+        "sentence": "寡母王氏乃现任京营节度使王子腾之妹，与荣国府贾政的夫人王氏，是一母所生的姊妹，今年方四十上下年纪，只有薛蟠一子",
+        "stated_age": 40,
+        "matched_text": "年方四十",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "薛蟠",
+          "贾政",
+          "王子腾"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [
+      {
+        "clue_type": "comparative",
+        "type": "comparative",
+        "sentence": "还有一女，比薛蟠小两岁，乳名宝钗， 生得肌肤莹润，举止娴雅",
+        "matched_text": "比薛蟠小两岁",
+        "raw_target_phrase": "薛蟠",
+        "direction": "小",
+        "age_diff": 2,
+        "candidate_characters_in_sentence": [
+          "薛蟠",
+          "薛宝钗"
+        ],
+        "needs_llm_review": true
+      }
+    ],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 22,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 23,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 24,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "清明",
+        "season": "春"
+      }
+    ]
+  },
+  {
+    "segment_id": 25,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 26,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 27,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 28,
+    "chapter": "第五回 游幻境指迷十二钗 饮仙醪曲演红楼梦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 29,
+    "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+    "age_candidates": [],
+    "relation_candidates": [
+      {
+        "clue_type": "comparative",
+        "type": "comparative",
+        "sentence": "袭人本是个聪明女子，年纪本又比宝玉大两岁，近来也渐通人事，今见宝玉如此光景，心中便觉察一半了，不觉也羞的红涨了脸面，不敢再问",
+        "matched_text": "年纪本又比宝玉大两岁",
+        "raw_target_phrase": "年纪本又比宝玉",
+        "direction": "大",
+        "age_diff": 2,
+        "candidate_characters_in_sentence": [
+          "贾宝玉",
+          "袭人"
+        ],
+        "needs_llm_review": true
+      }
+    ],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 30,
+    "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 31,
+    "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+    "age_candidates": [
+      {
+        "clue_type": "no_sui_idiom",
+        "sentence": "我们这里都是各占一样儿： 我们男的只管春秋两季地租子，闲时只带着小爷们出门子就完了，我只管跟太太、奶奶们出门的事",
+        "stated_age": 2,
+        "matched_text": "春秋两",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "小沙弥",
+          "王夫人"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 32,
+    "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "刘姥姥因说：“这凤姑娘今年大还不过二十岁罢了，就这等有本事，当这样的家，可是难得的",
+        "stated_age": 20,
+        "matched_text": "二十岁",
+        "bound_type": "at_most",
+        "raw_subject_phrase": "这凤姑娘",
+        "candidate_characters": [
+          "王熙凤",
+          "刘姥姥"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 33,
+    "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 34,
+    "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 35,
+    "chapter": "第六回 贾宝玉初试云雨情 刘姥姥一进荣国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 36,
+    "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 37,
+    "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 38,
+    "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 39,
+    "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 40,
+    "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 41,
+    "chapter": "第七回 送宫花贾琏戏熙凤 宴宁府宝玉会秦钟",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 42,
+    "chapter": "第八回 比通灵金莺微露意 探宝钗黛玉半含酸",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 43,
+    "chapter": "第八回 比通灵金莺微露意 探宝钗黛玉半含酸",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 44,
+    "chapter": "第八回 比通灵金莺微露意 探宝钗黛玉半含酸",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 45,
+    "chapter": "第八回 比通灵金莺微露意 探宝钗黛玉半含酸",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 46,
+    "chapter": "第八回 比通灵金莺微露意 探宝钗黛玉半含酸",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 47,
+    "chapter": "第八回 比通灵金莺微露意 探宝钗黛玉半含酸",
+    "age_candidates": [
+      {
+        "clue_type": "no_sui_idiom",
+        "sentence": "他父亲秦业 现任营缮郎， 年近七十，夫人早亡",
+        "stated_age": 70,
+        "matched_text": "年近七十",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 48,
+    "chapter": "第九回 恋风流情友入家塾 起嫌疑顽童闹学堂",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 49,
+    "chapter": "第九回 恋风流情友入家塾 起嫌疑顽童闹学堂",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 50,
+    "chapter": "第九回 恋风流情友入家塾 起嫌疑顽童闹学堂",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 51,
+    "chapter": "第九回 恋风流情友入家塾 起嫌疑顽童闹学堂",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "原来这一个名唤贾蔷， 亦系宁府中之正派 玄孙，父母早亡，从小儿跟贾珍过活，如今长了十六岁，比贾蓉生的还风流俊俏",
+        "stated_age": 16,
+        "matched_text": "十六岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾蓉",
+          "贾珍",
+          "贾蔷"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 52,
+    "chapter": "第九回 恋风流情友入家塾 起嫌疑顽童闹学堂",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 53,
+    "chapter": "第十回 金寡妇贪利权受辱 张太医论病细穷源",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 54,
+    "chapter": "第十回 金寡妇贪利权受辱 张太医论病细穷源",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 55,
+    "chapter": "第十回 金寡妇贪利权受辱 张太医论病细穷源",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 56,
+    "chapter": "第十回 金寡妇贪利权受辱 张太医论病细穷源",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 57,
+    "chapter": "第十回 金寡妇贪利权受辱 张太医论病细穷源",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 58,
+    "chapter": "第十一回 庆寿辰宁府排家宴 见熙凤贾瑞起淫心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "中秋",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 59,
+    "chapter": "第十一回 庆寿辰宁府排家宴 见熙凤贾瑞起淫心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 60,
+    "chapter": "第十一回 庆寿辰宁府排家宴 见熙凤贾瑞起淫心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 61,
+    "chapter": "第十一回 庆寿辰宁府排家宴 见熙凤贾瑞起淫心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 62,
+    "chapter": "第十一回 庆寿辰宁府排家宴 见熙凤贾瑞起淫心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 63,
+    "chapter": "第十一回 庆寿辰宁府排家宴 见熙凤贾瑞起淫心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 64,
+    "chapter": "第十二回 王熙凤毒设相思局 贾天祥正照风月鉴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "腊月",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 65,
+    "chapter": "第十二回 王熙凤毒设相思局 贾天祥正照风月鉴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 66,
+    "chapter": "第十二回 王熙凤毒设相思局 贾天祥正照风月鉴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 67,
+    "chapter": "第十二回 王熙凤毒设相思局 贾天祥正照风月鉴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 68,
+    "chapter": "第十二回 王熙凤毒设相思局 贾天祥正照风月鉴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 69,
+    "chapter": "第十三回 秦可卿死封龙禁尉 王熙凤协理宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 70,
+    "chapter": "第十三回 秦可卿死封龙禁尉 王熙凤协理宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 71,
+    "chapter": "第十三回 秦可卿死封龙禁尉 王熙凤协理宁国府",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "江南江宁府江宁县监生贾蓉，年二十岁",
+        "stated_age": 20,
+        "matched_text": "二十岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾蓉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 72,
+    "chapter": "第十三回 秦可卿死封龙禁尉 王熙凤协理宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 73,
+    "chapter": "第十三回 秦可卿死封龙禁尉 王熙凤协理宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 74,
+    "chapter": "第十四回 林如海捐馆扬州城 贾宝玉路谒北静王",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 75,
+    "chapter": "第十四回 林如海捐馆扬州城 贾宝玉路谒北静王",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 76,
+    "chapter": "第十四回 林如海捐馆扬州城 贾宝玉路谒北静王",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 77,
+    "chapter": "第十四回 林如海捐馆扬州城 贾宝玉路谒北静王",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 78,
+    "chapter": "第十四回 林如海捐馆扬州城 贾宝玉路谒北静王",
+    "age_candidates": [
+      {
+        "clue_type": "idiom_age",
+        "sentence": "现今北静王水溶年未弱冠，生得形容秀美，性情谦和",
+        "stated_age": 20,
+        "matched_text": "弱冠",
+        "bound_type": "exact",
+        "is_idiom_age": true,
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "北静王"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": true
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 79,
+    "chapter": "第十四回 林如海捐馆扬州城 贾宝玉路谒北静王",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 80,
+    "chapter": "第十五回 王凤姐弄权铁槛寺 秦鲸卿得趣馒头庵",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 81,
+    "chapter": "第十五回 王凤姐弄权铁槛寺 秦鲸卿得趣馒头庵",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 82,
+    "chapter": "第十五回 王凤姐弄权铁槛寺 秦鲸卿得趣馒头庵",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 83,
+    "chapter": "第十五回 王凤姐弄权铁槛寺 秦鲸卿得趣馒头庵",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 84,
+    "chapter": "第十五回 王凤姐弄权铁槛寺 秦鲸卿得趣馒头庵",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 85,
+    "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 86,
+    "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 87,
+    "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 88,
+    "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 89,
+    "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 90,
+    "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 91,
+    "chapter": "第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 92,
+    "chapter": "第十七回 大观园试才题对额 怡红院迷路探深幽",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 93,
+    "chapter": "第十七回 大观园试才题对额 怡红院迷路探深幽",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 94,
+    "chapter": "第十七回 大观园试才题对额 怡红院迷路探深幽",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 95,
+    "chapter": "第十七回 大观园试才题对额 怡红院迷路探深幽",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 96,
+    "chapter": "第十七回 大观园试才题对额 怡红院迷路探深幽",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 97,
+    "chapter": "第十七回 大观园试才题对额 怡红院迷路探深幽",
+    "age_candidates": [
+      {
+        "clue_type": "idiom_age",
+        "sentence": "吟成豆蔻才犹艳，睡足荼蘼梦亦香",
+        "stated_age": 14,
+        "matched_text": "豆蔻",
+        "bound_type": "about",
+        "is_idiom_age": true,
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 98,
+    "chapter": "第十七回 大观园试才题对额 怡红院迷路探深幽",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 99,
+    "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 100,
+    "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "因生了这位姑娘自小多病，买了许多替身儿皆不中用，到底这位姑娘亲自入了空门，方才好了，所以带发修行，今年才十八岁，法名妙玉",
+        "stated_age": 18,
+        "matched_text": "才十八岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "妙玉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 101,
+    "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "元宵",
+        "season": "冬"
+      },
+      {
+        "keyword": "上元",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 102,
+    "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 103,
+    "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 104,
+    "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 105,
+    "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 106,
+    "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 107,
+    "chapter": "第十八回 庆元宵贾元春归省 助情人林黛玉传诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 108,
+    "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 109,
+    "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 110,
+    "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 111,
+    "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "如今十七岁，各样的嫁妆都齐备了，明年就出嫁",
+        "stated_age": 17,
+        "matched_text": "十七岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": true
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 112,
+    "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 113,
+    "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 114,
+    "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 115,
+    "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "腊月",
+        "season": "冬"
+      },
+      {
+        "keyword": "腊八",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 116,
+    "chapter": "第十九回 情切切良宵花解语 意绵绵静日玉生香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 117,
+    "chapter": "第二十回 王熙凤正言弹妒意 林黛玉俏语谑娇音",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "元宵",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 118,
+    "chapter": "第二十回 王熙凤正言弹妒意 林黛玉俏语谑娇音",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 119,
+    "chapter": "第二十回 王熙凤正言弹妒意 林黛玉俏语谑娇音",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 120,
+    "chapter": "第二十回 王熙凤正言弹妒意 林黛玉俏语谑娇音",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 121,
+    "chapter": "第二十一回 贤袭人娇嗔箴宝玉 俏平儿软语救贾琏",
+    "age_candidates": [
+      {
+        "clue_type": "idiom_age",
+        "sentence": "在家不戴冠，并不总角，只将四围短发编成小辫，往顶心发上归了总，编一根大辫，红绦结住",
+        "stated_age": 8,
+        "matched_text": "总角",
+        "bound_type": "about",
+        "is_idiom_age": true,
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 122,
+    "chapter": "第二十一回 贤袭人娇嗔箴宝玉 俏平儿软语救贾琏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 123,
+    "chapter": "第二十一回 贤袭人娇嗔箴宝玉 俏平儿软语救贾琏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 124,
+    "chapter": "第二十一回 贤袭人娇嗔箴宝玉 俏平儿软语救贾琏",
+    "age_candidates": [
+      {
+        "clue_type": "no_sui_idiom",
+        "sentence": "因他自小父母替他在外娶了一个媳妇，今年方二十来往年纪，生得有几分人才，见者无不羡爱",
+        "stated_age": 20,
+        "matched_text": "年方二十",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 125,
+    "chapter": "第二十一回 贤袭人娇嗔箴宝玉 俏平儿软语救贾琏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 126,
+    "chapter": "第二十二回 听曲文宝玉悟禅机 制灯迷贾政悲谶语",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "但昨儿听见老太太说，问起大家的年纪生日来，听见薛大妹妹今年十五岁，虽不是整生日，也算得将笄之年",
+        "stated_age": 15,
+        "matched_text": "今年十五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "薛宝钗",
+          "王夫人",
+          "贾母"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 127,
+    "chapter": "第二十二回 听曲文宝玉悟禅机 制灯迷贾政悲谶语",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 128,
+    "chapter": "第二十二回 听曲文宝玉悟禅机 制灯迷贾政悲谶语",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "因问年纪，那小旦才十一岁，小丑才九岁，大家叹息一回",
+        "stated_age": 11,
+        "matched_text": "才十一岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "因问年纪，那小旦才十一岁，小丑才九岁，大家叹息一回",
+        "stated_age": 9,
+        "matched_text": "才九岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 129,
+    "chapter": "第二十二回 听曲文宝玉悟禅机 制灯迷贾政悲谶语",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 130,
+    "chapter": "第二十二回 听曲文宝玉悟禅机 制灯迷贾政悲谶语",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 131,
+    "chapter": "第二十二回 听曲文宝玉悟禅机 制灯迷贾政悲谶语",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 132,
+    "chapter": "第二十二回 听曲文宝玉悟禅机 制灯迷贾政悲谶语",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "上元",
+        "season": "冬"
+      },
+      {
+        "keyword": "清明",
+        "season": "春"
+      }
+    ]
+  },
+  {
+    "segment_id": 133,
+    "chapter": "第二十二回 听曲文宝玉悟禅机 制灯迷贾政悲谶语",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 134,
+    "chapter": "第二十三回 西厢记妙词通戏语 牡丹亭艳曲警芳心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 135,
+    "chapter": "第二十三回 西厢记妙词通戏语 牡丹亭艳曲警芳心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 136,
+    "chapter": "第二十三回 西厢记妙词通戏语 牡丹亭艳曲警芳心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 137,
+    "chapter": "第二十三回 西厢记妙词通戏语 牡丹亭艳曲警芳心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 138,
+    "chapter": "第二十三回 西厢记妙词通戏语 牡丹亭艳曲警芳心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 139,
+    "chapter": "第二十三回 西厢记妙词通戏语 牡丹亭艳曲警芳心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 140,
+    "chapter": "第二十三回 西厢记妙词通戏语 牡丹亭艳曲警芳心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 141,
+    "chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "人家比你大四五岁呢，就替你作儿子了",
+        "stated_age": 5,
+        "matched_text": "五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "”贾芸道：“十八岁",
+        "stated_age": 18,
+        "matched_text": "十八岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾芸"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 142,
+    "chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 143,
+    "chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 144,
+    "chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 145,
+    "chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "端阳",
+        "season": "夏"
+      }
+    ]
+  },
+  {
+    "segment_id": 146,
+    "chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 147,
+    "chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 148,
+    "chapter": "第二十四回 醉金刚轻财尚义侠 痴女儿遗帕惹相思",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "这红玉年方十六岁，因分人在大观园的时节，把他便分在怡红院中，倒也清幽雅静",
+        "stated_age": 16,
+        "matched_text": "年方十六岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "林红玉"
+        ],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 149,
+    "chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 150,
+    "chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 151,
+    "chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 152,
+    "chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 153,
+    "chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 154,
+    "chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 155,
+    "chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+    "age_candidates": [],
+    "relation_candidates": [
+      {
+        "clue_type": "elapsed_years",
+        "type": "elapsed_years",
+        "sentence": "“青埂峰一别，展眼已过十三载矣",
+        "matched_text": "已过十三载",
+        "elapsed_years": 13,
+        "candidate_characters_in_sentence": [],
+        "needs_llm_review": true
+      }
+    ],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 156,
+    "chapter": "第二十五回 魇魔法姊弟逢五鬼 红楼梦通灵遇双真",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 157,
+    "chapter": "第二十六回 蜂腰桥设言传心事 潇湘馆春困发幽情",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 158,
+    "chapter": "第二十七回 滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 159,
+    "chapter": "第二十七回 滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 160,
+    "chapter": "第二十七回 滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 161,
+    "chapter": "第二十七回 滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "”红玉道：“十七岁了",
+        "stated_age": 17,
+        "matched_text": "十七岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "林红玉"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 162,
+    "chapter": "第二十七回 滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 163,
+    "chapter": "第二十七回 滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 164,
+    "chapter": "第二十七回 滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 165,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 166,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 167,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 168,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 169,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 170,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [
+      {
+        "clue_type": "idiom_age",
+        "sentence": "豆蔻开花三月三，一个虫儿往里钻",
+        "stated_age": 14,
+        "matched_text": "豆蔻",
+        "bound_type": "about",
+        "is_idiom_age": true,
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 171,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 172,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "端午",
+        "season": "夏"
+      }
+    ]
+  },
+  {
+    "segment_id": 173,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 174,
+    "chapter": "第二十八回 蒋玉菡情赠茜香罗 薛宝钗羞笼红麝串",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 175,
+    "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "端阳",
+        "season": "夏"
+      }
+    ]
+  },
+  {
+    "segment_id": 176,
+    "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 177,
+    "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "”说毕呵呵又一大笑，道：“前日在一个人家看见一位小姐，今年十五岁了，生的倒也好个模样儿",
+        "stated_age": 15,
+        "matched_text": "今年十五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": "看见一位小姐",
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 178,
+    "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 179,
+    "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 180,
+    "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 181,
+    "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 182,
+    "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 183,
+    "chapter": "第二十九回 享福人福深还祷福 痴情女情重愈斟情",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 184,
+    "chapter": "第三十回 宝钗借扇机带双敲 龄官划蔷痴及局外",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 185,
+    "chapter": "第三十回 宝钗借扇机带双敲 龄官划蔷痴及局外",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 186,
+    "chapter": "第三十回 宝钗借扇机带双敲 龄官划蔷痴及局外",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 187,
+    "chapter": "第三十回 宝钗借扇机带双敲 龄官划蔷痴及局外",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 188,
+    "chapter": "第三十回 宝钗借扇机带双敲 龄官划蔷痴及局外",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "端阳",
+        "season": "夏"
+      }
+    ]
+  },
+  {
+    "segment_id": 189,
+    "chapter": "第三十回 宝钗借扇机带双敲 龄官划蔷痴及局外",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 190,
+    "chapter": "第三十一回 撕扇子作千金一笑 因麒麟伏白首双星",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "端阳",
+        "season": "夏"
+      }
+    ]
+  },
+  {
+    "segment_id": 191,
+    "chapter": "第三十一回 撕扇子作千金一笑 因麒麟伏白首双星",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 192,
+    "chapter": "第三十一回 撕扇子作千金一笑 因麒麟伏白首双星",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 193,
+    "chapter": "第三十一回 撕扇子作千金一笑 因麒麟伏白首双星",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 194,
+    "chapter": "第三十一回 撕扇子作千金一笑 因麒麟伏白首双星",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 195,
+    "chapter": "第三十一回 撕扇子作千金一笑 因麒麟伏白首双星",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 196,
+    "chapter": "第三十二回 诉肺腑心迷活宝玉 含耻辱情烈死金钏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 197,
+    "chapter": "第三十二回 诉肺腑心迷活宝玉 含耻辱情烈死金钏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 198,
+    "chapter": "第三十二回 诉肺腑心迷活宝玉 含耻辱情烈死金钏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 199,
+    "chapter": "第三十二回 诉肺腑心迷活宝玉 含耻辱情烈死金钏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 200,
+    "chapter": "第三十二回 诉肺腑心迷活宝玉 含耻辱情烈死金钏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 201,
+    "chapter": "第三十二回 诉肺腑心迷活宝玉 含耻辱情烈死金钏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 202,
+    "chapter": "第三十三回 手足耽耽小动唇色 不肖种种大承笞挞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 203,
+    "chapter": "第三十三回 手足耽耽小动唇色 不肖种种大承笞挞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 204,
+    "chapter": "第三十三回 手足耽耽小动唇色 不肖种种大承笞挞",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "我如今已将五十岁的人，只有这个孽障，必定苦苦的以他为法，我也不敢深劝",
+        "stated_age": 50,
+        "matched_text": "五十岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 205,
+    "chapter": "第三十三回 手足耽耽小动唇色 不肖种种大承笞挞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 206,
+    "chapter": "第三十三回 手足耽耽小动唇色 不肖种种大承笞挞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 207,
+    "chapter": "第三十四回 情中情因情感妹妹 错里错以错劝哥哥",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 208,
+    "chapter": "第三十四回 情中情因情感妹妹 错里错以错劝哥哥",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 209,
+    "chapter": "第三十四回 情中情因情感妹妹 错里错以错劝哥哥",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "只是有个原故，如今我想：我已经快五十岁的人，通共剩了他一个，他又长的单弱，况且老太太宝贝似的",
+        "stated_age": 50,
+        "matched_text": "五十岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾母",
+          "王夫人"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 210,
+    "chapter": "第三十四回 情中情因情感妹妹 错里错以错劝哥哥",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 211,
+    "chapter": "第三十四回 情中情因情感妹妹 错里错以错劝哥哥",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 212,
+    "chapter": "第三十四回 情中情因情感妹妹 错里错以错劝哥哥",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 213,
+    "chapter": "第三十四回 情中情因情感妹妹 错里错以错劝哥哥",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 214,
+    "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 215,
+    "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 216,
+    "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 217,
+    "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 218,
+    "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 219,
+    "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "目今傅秋芳年已二十三岁，尚未许人",
+        "stated_age": 23,
+        "matched_text": "年已二十三岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 220,
+    "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 221,
+    "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "”莺儿手里打着，一面答话说：“十六岁了",
+        "stated_age": 16,
+        "matched_text": "十六岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "莺儿"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 222,
+    "chapter": "第三十五回 白玉钏亲尝莲叶羹 黄金莺巧结梅花络",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 223,
+    "chapter": "第三十六回 绣鸳鸯梦兆绛芸轩 识分定情悟梨香院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 224,
+    "chapter": "第三十六回 绣鸳鸯梦兆绛芸轩 识分定情悟梨香院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 225,
+    "chapter": "第三十六回 绣鸳鸯梦兆绛芸轩 识分定情悟梨香院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 226,
+    "chapter": "第三十六回 绣鸳鸯梦兆绛芸轩 识分定情悟梨香院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 227,
+    "chapter": "第三十六回 绣鸳鸯梦兆绛芸轩 识分定情悟梨香院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 228,
+    "chapter": "第三十六回 绣鸳鸯梦兆绛芸轩 识分定情悟梨香院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 229,
+    "chapter": "第三十六回 绣鸳鸯梦兆绛芸轩 识分定情悟梨香院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 230,
+    "chapter": "第三十七回 秋爽斋偶结海棠社 蘅芜苑夜拟菊花题",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 231,
+    "chapter": "第三十七回 秋爽斋偶结海棠社 蘅芜苑夜拟菊花题",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 232,
+    "chapter": "第三十七回 秋爽斋偶结海棠社 蘅芜苑夜拟菊花题",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 233,
+    "chapter": "第三十七回 秋爽斋偶结海棠社 蘅芜苑夜拟菊花题",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 234,
+    "chapter": "第三十七回 秋爽斋偶结海棠社 蘅芜苑夜拟菊花题",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 235,
+    "chapter": "第三十七回 秋爽斋偶结海棠社 蘅芜苑夜拟菊花题",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 236,
+    "chapter": "第三十七回 秋爽斋偶结海棠社 蘅芜苑夜拟菊花题",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 237,
+    "chapter": "第三十七回 秋爽斋偶结海棠社 蘅芜苑夜拟菊花题",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 238,
+    "chapter": "第三十八回 林潇湘魁夺菊花诗 薛蘅芜讽和螃蟹咏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 239,
+    "chapter": "第三十八回 林潇湘魁夺菊花诗 薛蘅芜讽和螃蟹咏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 240,
+    "chapter": "第三十八回 林潇湘魁夺菊花诗 薛蘅芜讽和螃蟹咏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "重阳",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 241,
+    "chapter": "第三十八回 林潇湘魁夺菊花诗 薛蘅芜讽和螃蟹咏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 242,
+    "chapter": "第三十八回 林潇湘魁夺菊花诗 薛蘅芜讽和螃蟹咏",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "重阳",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 243,
+    "chapter": "第三十九回 村姥姥是信口开合 情哥哥偏寻根究底",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 244,
+    "chapter": "第三十九回 村姥姥是信口开合 情哥哥偏寻根究底",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 245,
+    "chapter": "第三十九回 村姥姥是信口开合 情哥哥偏寻根究底",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 246,
+    "chapter": "第三十九回 村姥姥是信口开合 情哥哥偏寻根究底",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 247,
+    "chapter": "第三十九回 村姥姥是信口开合 情哥哥偏寻根究底",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "可惜这茗玉小姐生到十七岁，一病死了",
+        "stated_age": 17,
+        "matched_text": "十七岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": "惜这茗玉小姐",
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": true
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 248,
+    "chapter": "第三十九回 村姥姥是信口开合 情哥哥偏寻根究底",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 249,
+    "chapter": "第四十回 史太君两宴大观园 金鸳鸯三宣牙牌令",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 250,
+    "chapter": "第四十一回 贾宝玉品茶栊翠庵 刘老妪醉卧怡红院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 251,
+    "chapter": "第四十一回 贾宝玉品茶栊翠庵 刘老妪醉卧怡红院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 252,
+    "chapter": "第四十一回 贾宝玉品茶栊翠庵 刘老妪醉卧怡红院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 253,
+    "chapter": "第四十一回 贾宝玉品茶栊翠庵 刘老妪醉卧怡红院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 254,
+    "chapter": "第四十一回 贾宝玉品茶栊翠庵 刘老妪醉卧怡红院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 255,
+    "chapter": "第四十一回 贾宝玉品茶栊翠庵 刘老妪醉卧怡红院",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 256,
+    "chapter": "第四十二回 蘅芜君兰言解疑癖 潇湘子雅谑补余香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 257,
+    "chapter": "第四十二回 蘅芜君兰言解疑癖 潇湘子雅谑补余香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 258,
+    "chapter": "第四十二回 蘅芜君兰言解疑癖 潇湘子雅谑补余香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 259,
+    "chapter": "第四十二回 蘅芜君兰言解疑癖 潇湘子雅谑补余香",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "从小七八岁上也够个人缠的",
+        "stated_age": 8,
+        "matched_text": "八岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 260,
+    "chapter": "第四十二回 蘅芜君兰言解疑癖 潇湘子雅谑补余香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 261,
+    "chapter": "第四十二回 蘅芜君兰言解疑癖 潇湘子雅谑补余香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 262,
+    "chapter": "第四十二回 蘅芜君兰言解疑癖 潇湘子雅谑补余香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 263,
+    "chapter": "第四十三回 闲取乐偶攒金庆寿 不了情暂撮土为香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 264,
+    "chapter": "第四十三回 闲取乐偶攒金庆寿 不了情暂撮土为香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 265,
+    "chapter": "第四十三回 闲取乐偶攒金庆寿 不了情暂撮土为香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 266,
+    "chapter": "第四十三回 闲取乐偶攒金庆寿 不了情暂撮土为香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 267,
+    "chapter": "第四十三回 闲取乐偶攒金庆寿 不了情暂撮土为香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 268,
+    "chapter": "第四十三回 闲取乐偶攒金庆寿 不了情暂撮土为香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 269,
+    "chapter": "第四十三回 闲取乐偶攒金庆寿 不了情暂撮土为香",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 270,
+    "chapter": "第四十四回 变生不测凤姐泼醋 喜出望外平儿理妆",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 271,
+    "chapter": "第四十四回 变生不测凤姐泼醋 喜出望外平儿理妆",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 272,
+    "chapter": "第四十四回 变生不测凤姐泼醋 喜出望外平儿理妆",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 273,
+    "chapter": "第四十四回 变生不测凤姐泼醋 喜出望外平儿理妆",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 274,
+    "chapter": "第四十四回 变生不测凤姐泼醋 喜出望外平儿理妆",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 275,
+    "chapter": "第四十四回 变生不测凤姐泼醋 喜出望外平儿理妆",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 276,
+    "chapter": "第四十四回 变生不测凤姐泼醋 喜出望外平儿理妆",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 277,
+    "chapter": "第四十四回 变生不测凤姐泼醋 喜出望外平儿理妆",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 278,
+    "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 279,
+    "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 280,
+    "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "你今年活了三十岁，虽然是人家的奴才，一落娘胎胞，主子恩典，放你出来，上托着主子的洪福，下托着你老子娘，也是公子哥儿似的读书认字，也是丫头、老婆、奶子捧凤凰似的长了这么大",
+        "stated_age": 30,
+        "matched_text": "三十岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "到二十岁上，又蒙主子的恩典，许你捐个前程在身上",
+        "stated_age": 20,
+        "matched_text": "二十岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 281,
+    "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 282,
+    "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "细细算来，我母亲去世的早，又无姊妹兄弟，我长了今年十五岁， 竟没一个人象你前日的话教导我",
+        "stated_age": 15,
+        "matched_text": "今年十五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 283,
+    "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 284,
+    "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 285,
+    "chapter": "第四十五回 金兰契互剖金兰语 风雨夕闷制风雨词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 286,
+    "chapter": "第四十六回 尴尬人难免尴尬事 鸳鸯女誓绝鸳鸯偶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 287,
+    "chapter": "第四十六回 尴尬人难免尴尬事 鸳鸯女誓绝鸳鸯偶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 288,
+    "chapter": "第四十六回 尴尬人难免尴尬事 鸳鸯女誓绝鸳鸯偶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 289,
+    "chapter": "第四十六回 尴尬人难免尴尬事 鸳鸯女誓绝鸳鸯偶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 290,
+    "chapter": "第四十六回 尴尬人难免尴尬事 鸳鸯女誓绝鸳鸯偶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 291,
+    "chapter": "第四十六回 尴尬人难免尴尬事 鸳鸯女誓绝鸳鸯偶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 292,
+    "chapter": "第四十六回 尴尬人难免尴尬事 鸳鸯女誓绝鸳鸯偶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 293,
+    "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 294,
+    "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 295,
+    "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 296,
+    "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "只得又各处遣人购求寻觅，终究费了八百两银子买了一个十七岁的女孩子来，名唤嫣红，收在屋内",
+        "stated_age": 17,
+        "matched_text": "十七岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 297,
+    "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 298,
+    "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 299,
+    "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 300,
+    "chapter": "第四十七回 呆霸王调情遭苦打 冷郎君惧祸走他乡",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 301,
+    "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "端阳",
+        "season": "夏"
+      }
+    ]
+  },
+  {
+    "segment_id": 302,
+    "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 303,
+    "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 304,
+    "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 305,
+    "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 306,
+    "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 307,
+    "chapter": "第四十八回 滥情人情误思游艺 慕雅女雅集苦吟诗",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 308,
+    "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 309,
+    "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 310,
+    "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 311,
+    "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 312,
+    "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 313,
+    "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 314,
+    "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 315,
+    "chapter": "第四十九回 琉璃世界白雪红梅 脂粉香娃割腥啖膻",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 316,
+    "chapter": "第五十回 芦雪庵争联即景诗 暖香坞雅制春灯谜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 317,
+    "chapter": "第五十回 芦雪庵争联即景诗 暖香坞雅制春灯谜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 318,
+    "chapter": "第五十回 芦雪庵争联即景诗 暖香坞雅制春灯谜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 319,
+    "chapter": "第五十回 芦雪庵争联即景诗 暖香坞雅制春灯谜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "端阳",
+        "season": "夏"
+      }
+    ]
+  },
+  {
+    "segment_id": 320,
+    "chapter": "第五十回 芦雪庵争联即景诗 暖香坞雅制春灯谜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 321,
+    "chapter": "第五十回 芦雪庵争联即景诗 暖香坞雅制春灯谜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 322,
+    "chapter": "第五十回 芦雪庵争联即景诗 暖香坞雅制春灯谜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 323,
+    "chapter": "第五十回 芦雪庵争联即景诗 暖香坞雅制春灯谜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 324,
+    "chapter": "第五十一回 薛小妹新编怀古诗 胡庸医乱用虎狼药",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "那三岁孩子也知道，何况咱们",
+        "stated_age": 3,
+        "matched_text": "三岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 325,
+    "chapter": "第五十一回 薛小妹新编怀古诗 胡庸医乱用虎狼药",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 326,
+    "chapter": "第五十一回 薛小妹新编怀古诗 胡庸医乱用虎狼药",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 327,
+    "chapter": "第五十一回 薛小妹新编怀古诗 胡庸医乱用虎狼药",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 328,
+    "chapter": "第五十一回 薛小妹新编怀古诗 胡庸医乱用虎狼药",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 329,
+    "chapter": "第五十一回 薛小妹新编怀古诗 胡庸医乱用虎狼药",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 330,
+    "chapter": "第五十一回 薛小妹新编怀古诗 胡庸医乱用虎狼药",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 331,
+    "chapter": "第五十一回 薛小妹新编怀古诗 胡庸医乱用虎狼药",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 332,
+    "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 333,
+    "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 334,
+    "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "我八岁时节，跟我父亲到西海沿子上买洋货，谁知有个真真国的女孩子，才十五岁，那脸面就和那西洋画上的美人一样，也披着黄头发，打着联垂，满头带的都是珊瑚、猫儿眼、祖母绿这些宝石，身上穿着金丝织的锁子甲洋锦袄袖，带着倭刀，也是镶金嵌宝的，实在画儿上的也没他好看",
+        "stated_age": 8,
+        "matched_text": "八岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "我八岁时节，跟我父亲到西海沿子上买洋货，谁知有个真真国的女孩子，才十五岁，那脸面就和那西洋画上的美人一样，也披着黄头发，打着联垂，满头带的都是珊瑚、猫儿眼、祖母绿这些宝石，身上穿着金丝织的锁子甲洋锦袄袖，带着倭刀，也是镶金嵌宝的，实在画儿上的也没他好看",
+        "stated_age": 15,
+        "matched_text": "才十五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 335,
+    "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 336,
+    "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 337,
+    "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 338,
+    "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 339,
+    "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 340,
+    "chapter": "第五十二回 俏平儿情掩虾须镯 勇晴雯病补雀金裘",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 341,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "腊月",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 342,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "新春",
+        "season": "春"
+      }
+    ]
+  },
+  {
+    "segment_id": 343,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 344,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "腊月",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 345,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 346,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "偏这慧娘命夭，十八岁便死了，如今竟不能再得一件的了",
+        "stated_age": 18,
+        "matched_text": "十八岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "元宵",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 347,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 348,
+    "chapter": "第五十三回 宁国府除夕祭宗祠 荣国府元宵开夜宴",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "”凤姐便说：“这孩子才九岁了",
+        "stated_age": 9,
+        "matched_text": "才九岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "王熙凤"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 349,
+    "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 350,
+    "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 351,
+    "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "元宵",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 352,
+    "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 353,
+    "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 354,
+    "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 355,
+    "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 356,
+    "chapter": "第五十四回 史太君破陈腐旧套 王熙凤效戏彩斑衣",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "元宵",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 357,
+    "chapter": "第五十五回 辱亲女愚妾争闲气 欺幼主刁奴蓄险心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "元宵",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 358,
+    "chapter": "第五十五回 辱亲女愚妾争闲气 欺幼主刁奴蓄险心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 359,
+    "chapter": "第五十五回 辱亲女愚妾争闲气 欺幼主刁奴蓄险心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 360,
+    "chapter": "第五十五回 辱亲女愚妾争闲气 欺幼主刁奴蓄险心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 361,
+    "chapter": "第五十五回 辱亲女愚妾争闲气 欺幼主刁奴蓄险心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 362,
+    "chapter": "第五十五回 辱亲女愚妾争闲气 欺幼主刁奴蓄险心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 363,
+    "chapter": "第五十五回 辱亲女愚妾争闲气 欺幼主刁奴蓄险心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 364,
+    "chapter": "第五十五回 辱亲女愚妾争闲气 欺幼主刁奴蓄险心",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 365,
+    "chapter": "第五十六回 敏探春兴利除宿弊 识宝钗小惠全大体",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 366,
+    "chapter": "第五十六回 敏探春兴利除宿弊 识宝钗小惠全大体",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 367,
+    "chapter": "第五十六回 敏探春兴利除宿弊 识宝钗小惠全大体",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 368,
+    "chapter": "第五十六回 敏探春兴利除宿弊 识宝钗小惠全大体",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 369,
+    "chapter": "第五十六回 敏探春兴利除宿弊 识宝钗小惠全大体",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 370,
+    "chapter": "第五十六回 敏探春兴利除宿弊 识宝钗小惠全大体",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "”四人笑说：“今年十三岁",
+        "stated_age": 13,
+        "matched_text": "今年十三岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 371,
+    "chapter": "第五十六回 敏探春兴利除宿弊 识宝钗小惠全大体",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 372,
+    "chapter": "第五十六回 敏探春兴利除宿弊 识宝钗小惠全大体",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 373,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 374,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 375,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 376,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 377,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 378,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 379,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 380,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 381,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 382,
+    "chapter": "第五十七回 慧紫鹃情辞试忙玉 慈姨妈爱语慰痴颦",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 383,
+    "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 384,
+    "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "清明",
+        "season": "春"
+      }
+    ]
+  },
+  {
+    "segment_id": 385,
+    "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 386,
+    "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 387,
+    "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 388,
+    "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 389,
+    "chapter": "第五十八回 杏子阴假凤泣虚凰 茜纱窗真情揆痴理",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 390,
+    "chapter": "第五十九回 柳叶渚边嗔莺咤燕 绛云轩里召将飞符",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 391,
+    "chapter": "第五十九回 柳叶渚边嗔莺咤燕 绛云轩里召将飞符",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 392,
+    "chapter": "第五十九回 柳叶渚边嗔莺咤燕 绛云轩里召将飞符",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 393,
+    "chapter": "第五十九回 柳叶渚边嗔莺咤燕 绛云轩里召将飞符",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 394,
+    "chapter": "第五十九回 柳叶渚边嗔莺咤燕 绛云轩里召将飞符",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 395,
+    "chapter": "第六十回 茉莉粉替去蔷薇硝 玖瑰露引来茯苓霜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 396,
+    "chapter": "第六十回 茉莉粉替去蔷薇硝 玖瑰露引来茯苓霜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 397,
+    "chapter": "第六十回 茉莉粉替去蔷薇硝 玖瑰露引来茯苓霜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 398,
+    "chapter": "第六十回 茉莉粉替去蔷薇硝 玖瑰露引来茯苓霜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 399,
+    "chapter": "第六十回 茉莉粉替去蔷薇硝 玖瑰露引来茯苓霜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 400,
+    "chapter": "第六十回 茉莉粉替去蔷薇硝 玖瑰露引来茯苓霜",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "原来这柳家的有个女儿，今年才十六岁，虽是厨役之女，却生的人物与平、袭、紫、鸳皆类",
+        "stated_age": 16,
+        "matched_text": "才十六岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 401,
+    "chapter": "第六十回 茉莉粉替去蔷薇硝 玖瑰露引来茯苓霜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 402,
+    "chapter": "第六十回 茉莉粉替去蔷薇硝 玖瑰露引来茯苓霜",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 403,
+    "chapter": "第六十一回 投鼠忌器宝玉瞒脏 判冤决狱平儿行权",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 404,
+    "chapter": "第六十一回 投鼠忌器宝玉瞒脏 判冤决狱平儿行权",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 405,
+    "chapter": "第六十一回 投鼠忌器宝玉瞒脏 判冤决狱平儿行权",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 406,
+    "chapter": "第六十一回 投鼠忌器宝玉瞒脏 判冤决狱平儿行权",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 407,
+    "chapter": "第六十一回 投鼠忌器宝玉瞒脏 判冤决狱平儿行权",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 408,
+    "chapter": "第六十一回 投鼠忌器宝玉瞒脏 判冤决狱平儿行权",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 409,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 410,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 411,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 412,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 413,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 414,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 415,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 416,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 417,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 418,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 419,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 420,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 421,
+    "chapter": "第六十二回 憨湘云醉眠芍药裀 呆香菱情解石榴裙",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 422,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 423,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 424,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 425,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 426,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 427,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 428,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 429,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 430,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 431,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 432,
+    "chapter": "第六十三回 寿怡红群芳开夜宴 死金丹独艳理亲丧",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 433,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 434,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 435,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 436,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 437,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 438,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 439,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 440,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 441,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 442,
+    "chapter": "第六十四回 幽淑女悲题五美吟 浪荡子情遗九龙佩",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 443,
+    "chapter": "第六十五回 贾二舍偷娶尤二姨 尤三姐思嫁柳二郎",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 444,
+    "chapter": "第六十五回 贾二舍偷娶尤二姨 尤三姐思嫁柳二郎",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 445,
+    "chapter": "第六十五回 贾二舍偷娶尤二姨 尤三姐思嫁柳二郎",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 446,
+    "chapter": "第六十五回 贾二舍偷娶尤二姨 尤三姐思嫁柳二郎",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 447,
+    "chapter": "第六十五回 贾二舍偷娶尤二姨 尤三姐思嫁柳二郎",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 448,
+    "chapter": "第六十五回 贾二舍偷娶尤二姨 尤三姐思嫁柳二郎",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 449,
+    "chapter": "第六十五回 贾二舍偷娶尤二姨 尤三姐思嫁柳二郎",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 450,
+    "chapter": "第六十五回 贾二舍偷娶尤二姨 尤三姐思嫁柳二郎",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 451,
+    "chapter": "第六十六回 情小妹耻情归地府 冷二郎一冷入空门",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 452,
+    "chapter": "第六十六回 情小妹耻情归地府 冷二郎一冷入空门",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 453,
+    "chapter": "第六十六回 情小妹耻情归地府 冷二郎一冷入空门",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 454,
+    "chapter": "第六十六回 情小妹耻情归地府 冷二郎一冷入空门",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 455,
+    "chapter": "第六十六回 情小妹耻情归地府 冷二郎一冷入空门",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 456,
+    "chapter": "第六十六回 情小妹耻情归地府 冷二郎一冷入空门",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 457,
+    "chapter": "第六十七回 见土仪颦卿思故里 闻秘事凤姐讯家童",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 458,
+    "chapter": "第六十七回 见土仪颦卿思故里 闻秘事凤姐讯家童",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 459,
+    "chapter": "第六十七回 见土仪颦卿思故里 闻秘事凤姐讯家童",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 460,
+    "chapter": "第六十七回 见土仪颦卿思故里 闻秘事凤姐讯家童",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 461,
+    "chapter": "第六十七回 见土仪颦卿思故里 闻秘事凤姐讯家童",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "三伏",
+        "season": "夏"
+      }
+    ]
+  },
+  {
+    "segment_id": 462,
+    "chapter": "第六十七回 见土仪颦卿思故里 闻秘事凤姐讯家童",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 463,
+    "chapter": "第六十七回 见土仪颦卿思故里 闻秘事凤姐讯家童",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 464,
+    "chapter": "第六十七回 见土仪颦卿思故里 闻秘事凤姐讯家童",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 465,
+    "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 466,
+    "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 467,
+    "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "女婿现在才十九岁，成日在外嫖赌，不理生业，家私花尽，父亲撵他出来，现在赌钱厂存身",
+        "stated_age": 19,
+        "matched_text": "才十九岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 468,
+    "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 469,
+    "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 470,
+    "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 471,
+    "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 472,
+    "chapter": "第六十八回 苦尤娘赚入大观园 酸凤姐大闹宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 473,
+    "chapter": "第六十九回 弄小巧用借剑杀人 觉大限吞生金自逝",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 474,
+    "chapter": "第六十九回 弄小巧用借剑杀人 觉大限吞生金自逝",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 475,
+    "chapter": "第六十九回 弄小巧用借剑杀人 觉大限吞生金自逝",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "贾赦十分欢喜，说他中用，赏了他一百两银子，又将房中一个十七岁的丫鬟名唤秋桐者，赏他为妾",
+        "stated_age": 17,
+        "matched_text": "十七岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾赦"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "腊月",
+        "season": "冬"
+      }
+    ]
+  },
+  {
+    "segment_id": 476,
+    "chapter": "第六十九回 弄小巧用借剑杀人 觉大限吞生金自逝",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 477,
+    "chapter": "第六十九回 弄小巧用借剑杀人 觉大限吞生金自逝",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 478,
+    "chapter": "第六十九回 弄小巧用借剑杀人 觉大限吞生金自逝",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 479,
+    "chapter": "第六十九回 弄小巧用借剑杀人 觉大限吞生金自逝",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 480,
+    "chapter": "第六十九回 弄小巧用借剑杀人 觉大限吞生金自逝",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 481,
+    "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "因又年近岁逼，诸务猬集不算外，又有林之孝开了一个“人名单子”来，共有八个二十五岁的单身小厮应该娶妻成房，等里面有该放的丫头们好求指配",
+        "stated_age": 25,
+        "matched_text": "二十五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "林之孝"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": true
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 482,
+    "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 483,
+    "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 484,
+    "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 485,
+    "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 486,
+    "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 487,
+    "chapter": "第七十回 林黛玉重建桃花社 史湘云偶填柳絮词",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 488,
+    "chapter": "第七十一回 嫌隙人有心生嫌隙 鸳鸯女无意遇鸳鸯",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 489,
+    "chapter": "第七十一回 嫌隙人有心生嫌隙 鸳鸯女无意遇鸳鸯",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 490,
+    "chapter": "第七十一回 嫌隙人有心生嫌隙 鸳鸯女无意遇鸳鸯",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 491,
+    "chapter": "第七十一回 嫌隙人有心生嫌隙 鸳鸯女无意遇鸳鸯",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 492,
+    "chapter": "第七十一回 嫌隙人有心生嫌隙 鸳鸯女无意遇鸳鸯",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 493,
+    "chapter": "第七十一回 嫌隙人有心生嫌隙 鸳鸯女无意遇鸳鸯",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 494,
+    "chapter": "第七十一回 嫌隙人有心生嫌隙 鸳鸯女无意遇鸳鸯",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 495,
+    "chapter": "第七十一回 嫌隙人有心生嫌隙 鸳鸯女无意遇鸳鸯",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 496,
+    "chapter": "第七十一回 嫌隙人有心生嫌隙 鸳鸯女无意遇鸳鸯",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 497,
+    "chapter": "第七十二回 王熙凤恃强羞说病 来旺妇倚势霸成亲",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 498,
+    "chapter": "第七十二回 王熙凤恃强羞说病 来旺妇倚势霸成亲",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 499,
+    "chapter": "第七十二回 王熙凤恃强羞说病 来旺妇倚势霸成亲",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "重阳",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 500,
+    "chapter": "第七十二回 王熙凤恃强羞说病 来旺妇倚势霸成亲",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "旺儿有个小子，今年十七岁了，还没得女人，因要求太太房里的彩霞，不知太太心里怎么样，就没有计较得",
+        "stated_age": 17,
+        "matched_text": "今年十七岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "王夫人",
+          "彩霞"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "中秋",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 501,
+    "chapter": "第七十二回 王熙凤恃强羞说病 来旺妇倚势霸成亲",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 502,
+    "chapter": "第七十二回 王熙凤恃强羞说病 来旺妇倚势霸成亲",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 503,
+    "chapter": "第七十三回 痴丫头误拾绣春囊 懦小姐不问累金凤",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 504,
+    "chapter": "第七十三回 痴丫头误拾绣春囊 懦小姐不问累金凤",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 505,
+    "chapter": "第七十三回 痴丫头误拾绣春囊 懦小姐不问累金凤",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 506,
+    "chapter": "第七十三回 痴丫头误拾绣春囊 懦小姐不问累金凤",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 507,
+    "chapter": "第七十三回 痴丫头误拾绣春囊 懦小姐不问累金凤",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 508,
+    "chapter": "第七十三回 痴丫头误拾绣春囊 懦小姐不问累金凤",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 509,
+    "chapter": "第七十三回 痴丫头误拾绣春囊 懦小姐不问累金凤",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 510,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 511,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 512,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 513,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 514,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 515,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 516,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 517,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 518,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 519,
+    "chapter": "第七十四回 惑奸谗抄检大观园 矢孤介杜绝宁国府",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 520,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 521,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 522,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 523,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 524,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "此间伏侍的小厮都是十五岁以下的孩子，若成丁的男子就到不了这里，故尤氏方潜至窗外偷看",
+        "stated_age": 15,
+        "matched_text": "十五岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": "间伏侍的小厮",
+        "candidate_characters": [
+          "尤氏"
+        ],
+        "confidence": "high",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 525,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 526,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 527,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 528,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 529,
+    "chapter": "第七十五回 开夜宴异兆发悲音 赏中秋新词得佳谶",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 530,
+    "chapter": "第七十六回 凸碧堂品笛感凄清 凹晶馆联诗悲寂寞",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "我们虽然年轻，已经是十来年的夫妻，也奔四十岁的人了",
+        "stated_age": 40,
+        "matched_text": "四十岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 531,
+    "chapter": "第七十六回 凸碧堂品笛感凄清 凹晶馆联诗悲寂寞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 532,
+    "chapter": "第七十六回 凸碧堂品笛感凄清 凹晶馆联诗悲寂寞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "中秋",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 533,
+    "chapter": "第七十六回 凸碧堂品笛感凄清 凹晶馆联诗悲寂寞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "上元",
+        "season": "冬"
+      },
+      {
+        "keyword": "中秋",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 534,
+    "chapter": "第七十六回 凸碧堂品笛感凄清 凹晶馆联诗悲寂寞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 535,
+    "chapter": "第七十六回 凸碧堂品笛感凄清 凹晶馆联诗悲寂寞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 536,
+    "chapter": "第七十六回 凸碧堂品笛感凄清 凹晶馆联诗悲寂寞",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "中秋",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 537,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": [
+      {
+        "keyword": "中秋",
+        "season": "秋"
+      }
+    ]
+  },
+  {
+    "segment_id": 538,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 539,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 540,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 541,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 542,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 543,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "这晴雯当日系赖大家用银子买的，那时晴雯才得十岁，尚未留头",
+        "stated_age": 10,
+        "matched_text": "十岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "晴雯",
+          "赖大"
+        ],
+        "confidence": "multiple_characters_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 544,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 545,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 546,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 547,
+    "chapter": "第七十七回 俏丫鬟抱屈夭风流 美优伶斩情归水月",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 548,
+    "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 549,
+    "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 550,
+    "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 551,
+    "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 552,
+    "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 553,
+    "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "众幕宾看了，便皆大赞：“小哥儿十三岁的人就如此，可知家学渊源，真不诬矣",
+        "stated_age": 13,
+        "matched_text": "十三岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": "小哥儿",
+        "candidate_characters": [],
+        "confidence": "no_character_found",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      },
+      {
+        "clue_type": "absolute",
+        "sentence": "三爷才大不多两岁，在未冠之时如此，用了工夫，再过几年，怕不是大阮小阮了",
+        "stated_age": 2,
+        "matched_text": "两岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": null,
+        "candidate_characters": [
+          "贾环"
+        ],
+        "confidence": "high",
+        "needs_llm_review": false,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 554,
+    "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 555,
+    "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 556,
+    "chapter": "第七十八回 老学士闲征姽婳词 痴公子杜撰芙蓉诔",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 557,
+    "chapter": "第七十九回 薛文龙悔娶河东狮 贾迎春误嫁中山狼",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 558,
+    "chapter": "第七十九回 薛文龙悔娶河东狮 贾迎春误嫁中山狼",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 559,
+    "chapter": "第七十九回 薛文龙悔娶河东狮 贾迎春误嫁中山狼",
+    "age_candidates": [
+      {
+        "clue_type": "absolute",
+        "sentence": "原来这夏家小姐今年方十七岁，生得亦颇有姿色，亦颇识得几个字",
+        "stated_age": 17,
+        "matched_text": "年方十七岁",
+        "bound_type": "exact",
+        "raw_subject_phrase": "来这夏家小姐",
+        "candidate_characters": [],
+        "confidence": "multi_age_ambiguous",
+        "needs_llm_review": true,
+        "past_time_marker_detected": false,
+        "milestone_keyword_detected": false
+      }
+    ],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 560,
+    "chapter": "第七十九回 薛文龙悔娶河东狮 贾迎春误嫁中山狼",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 561,
+    "chapter": "第八十回 美香菱屈受贪夫棒 王道士胡诌妒妇方",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 562,
+    "chapter": "第八十回 美香菱屈受贪夫棒 王道士胡诌妒妇方",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 563,
+    "chapter": "第八十回 美香菱屈受贪夫棒 王道士胡诌妒妇方",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 564,
+    "chapter": "第八十回 美香菱屈受贪夫棒 王道士胡诌妒妇方",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 565,
+    "chapter": "第八十回 美香菱屈受贪夫棒 王道士胡诌妒妇方",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 566,
+    "chapter": "第八十回 美香菱屈受贪夫棒 王道士胡诌妒妇方",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  },
+  {
+    "segment_id": 567,
+    "chapter": "第八十回 美香菱屈受贪夫棒 王道士胡诌妒妇方",
+    "age_candidates": [],
+    "relation_candidates": [],
+    "season_candidates": []
+  }
+]
